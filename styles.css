@@ -1,0 +1,1726 @@
+:root {
+  /* Marca Corefinity (azules) */
+  --cf-primary:       #0274D8;
+  --cf-primary-dark:  #003B99;
+  --cf-primary-light: #E6F1FB;
+
+  /* CTA (Free Demo, botones clave) */
+  --cf-accent:        #FF7B39;
+  --cf-accent-soft:   #FFE0CC;
+
+  /* Neutros */
+  --cf-bg:            #F9FAFB;
+  --cf-surface:       #FFFFFF;
+  --cf-border:        #E5E7EB;
+  --cf-shadow:        rgba(15, 23, 42, 0.12);
+
+  /* Texto */
+  --cf-text-main:     #111827;
+  --cf-text-muted:    #6B7280;
+  --cf-text-on-dark:  #F9FAFB;
+
+  /* Estados (por si los necesitas) */
+  --cf-success:       #22C55E;
+  --cf-warning:       #FACC15;
+  --cf-error:         #EF4444;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--cf-text-main);
+  background:
+    radial-gradient(circle at top left, rgba(2,116,216,0.16), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(255,123,57,0.13), transparent 55%),
+    var(--cf-bg);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- HEADER / NAV ---------- */
+
+.cf-header {
+  background-color: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+  z-index: 1000;
+}
+
+.navbar-brand img {
+  height: 34px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #0f172a;
+  padding-inline: 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--cf-primary);
+}
+
+.cf-nav-cta {
+  background: linear-gradient(135deg, var(--cf-accent), #ff9a5e);
+  color: #fff !important;
+  border-radius: 999px;
+  padding: 0.55rem 1.5rem !important;
+  box-shadow: 0 8px 18px rgba(255,123,57,0.45);
+  font-weight: 600;
+  border: none;
+}
+
+.cf-nav-cta:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 10px 25px rgba(255,123,57,0.6);
+}
+
+/* ---------- MEGA MENU ---------- */
+
+.dropdown-mega {
+  position: static;
+}
+
+/* Contenedor mega menú con animación suave */
+.dropdown-menu.cf-mega-menu {
+  width: 100%;
+  border-radius: 24px;
+  margin-top: 0.75rem;
+  padding: 1.75rem 2rem;
+  border: 1px solid rgba(148,163,184,0.35);
+  box-shadow: 0 28px 60px rgba(15,23,42,0.18);
+  background: radial-gradient(circle at top left, rgba(2,116,216,0.10), transparent 60%), #ffffff;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+}
+
+/* Bootstrap le agrega .show cuando abre → aquí animamos */
+.dropdown-menu.cf-mega-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cf-mega-heading {
+  font-size: .9rem;
+  letter-spacing: .08em;
+  font-weight: 600;
+  color: var(--cf-text-muted);
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+
+.cf-resource-group {
+  border-right: 1px solid rgba(148,163,184,0.35);
+}
+
+.cf-resource-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .75rem;
+  padding: .75rem .85rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition:
+    background 0.20s ease,
+    box-shadow 0.20s ease,
+    transform 0.15s ease;
+}
+
+.cf-resource-item:hover,
+.cf-resource-item:focus-within {
+  background: var(--cf-primary-light);
+  box-shadow: 0 12px 30px rgba(15,23,42,0.12);
+  transform: translateY(-2px);
+}
+
+.cf-resource-icon {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(2,116,216,0.15), rgba(2,116,216,0));
+  color: var(--cf-primary);
+  font-size: 1.25rem;
+  box-shadow: 0 8px 18px rgba(15,23,42,0.08);
+}
+
+.cf-resource-title {
+  font-weight: 600;
+  margin-bottom: .15rem;
+  font-size: .98rem;
+}
+
+.cf-resource-desc {
+  font-size: .82rem;
+  color: var(--cf-text-muted);
+  max-width: 32rem;
+}
+
+/* ---------- PANEL DERECHO (PREVIEW CON VELO) ---------- */
+
+.cf-resource-preview {
+  border-radius: 24px;
+  padding: 1.8rem;
+  color: var(--cf-text-on-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  background-image:
+    linear-gradient(145deg, rgba(96, 168, 231, 0.9), rgba(181, 202, 234, 0.95)),
+    url("https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ESTE ES EL VELO – LO DEJAMOS TAL CUAL */
+.cf-resource-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.24), transparent 55%);
+  mix-blend-mode: screen;
+  opacity: .85;
+}
+
+.cf-resource-preview-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cf-preview-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .25rem .75rem;
+  border-radius: 999px;
+  background: rgba(15,23,42,0.35);
+  font-size: .75rem;
+}
+
+.cf-preview-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.cf-preview-text {
+  font-size: .9rem;
+  margin-top: .5rem;
+  color: rgba(249,250,251,0.9);
+}
+
+.cf-preview-btn {
+  margin-top: 1.3rem;
+  align-self: flex-start;
+}
+
+/* Botón ghost genérico por si lo usas en más lados */
+.cf-btn.cf-btn-ghost {
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.7);
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cf-text-on-dark);
+  background: transparent;
+}
+
+.cf-btn.cf-btn-ghost:hover {
+  background: #ffffff;
+  color: var(--cf-primary-dark);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 991.98px) {
+  .dropdown-menu.cf-mega-menu {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .cf-resource-group {
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,0.35);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .cf-resource-preview-inner {
+    max-width: 100%;
+  }
+}
+
+/* -------------------- HERO -------------------- */
+
+/* ---------- HERO CON VIDEO DE FONDO ---------- */
+
+.cf-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+/* Video ocupa todo el fondo del hero */
+.cf-hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Velo azul claro con un toque cálido (brief style) */
+.cf-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(2,116,216,0.40), transparent 60%),
+    radial-gradient(circle at 90% 80%, rgba(255,123,57,0.25), transparent 60%),
+    rgba(223,239,252,0.85);
+}
+
+/* Texto */
+
+.cf-hero-eyebrow {
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-weight: 500;
+  color: #003B99;
+  margin-bottom: 1rem;
+}
+
+.cf-hero-title {
+  font-size: clamp(2.4rem, 3vw + 1.3rem, 3.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cf-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.cf-hero-title span {
+  color: var(--cf-primary);
+}
+
+.cf-hero-text {
+  font-size: 1.05rem;
+  max-width: 560px;
+  color: #f9fafb;           /* claro porque fondo es oscuro/azul */
+  text-shadow: 0 2px 8px rgba(15,23,42,0.6);
+  margin-bottom: 1.8rem;
+}
+
+/* Botón principal (link) */
+
+.cf-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  border-radius: 999px;
+  padding: .75rem 1.55rem;
+  border: 2px solid #ffffff;
+  background: rgba(15,23,42,0.15);
+  font-weight: 600;
+  color: #ffffff;
+  transition: all .2s ease;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+
+.cf-hero-btn:hover {
+  background: #ffffff;
+  color: var(--cf-primary-dark);
+}
+
+/* Logos de partners – solo imagen, más grandes */
+
+.cf-hero-clouds {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.cf-cloud-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 10px 26px rgba(15,23,42,0.35);
+}
+
+.cf-cloud-pill img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991.98px) {
+  .cf-hero {
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+
+  .cf-hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cf-hero-clouds {
+    justify-content: center;
+  }
+}
+
+
+/* ---------- SUPPORTED PLATFORMS + HOSTING INTRO ---------- */
+
+.cf-hosting-intro {
+  margin-top: 4rem;           /* separación del hero */
+  padding: 5rem 0 4.5rem;
+
+  background:
+    radial-gradient(circle at 0% 0%, rgba(2,116,216,0.10), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(255,123,57,0.12), transparent 60%),
+    #f9fafb;
+  border-top: 1px solid rgba(148,163,184,0.22);
+}
+
+/* Título "Supported Platforms..." */
+.cf-platforms {
+  margin-bottom: 3rem;
+}
+
+.cf-platforms-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #0f172a;
+  margin-bottom: 1.8rem;
+}
+
+/* Tira de logos */
+.cf-platforms-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+.cf-platforms-strip a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cf-platform-logo {
+  height: 40px;
+  filter: grayscale(1) opacity(.85);
+  transition: filter .2s ease, transform .2s ease;
+}
+
+.cf-platform-logo:hover {
+  filter: grayscale(0) opacity(1);
+  transform: translateY(-3px);
+}
+
+/* Copy de hosting */
+.cf-hosting-copy {
+  max-width: 820px;
+  margin: 3.5rem auto 0 auto;
+  text-align: center;
+}
+
+.cf-hosting-title {
+  font-size: clamp(2rem, 2.5vw + 1rem, 2.6rem);
+  font-weight: 800;
+  color: var(--cf-primary-dark);  /* como el hero */
+  margin-bottom: 1.7rem;
+}
+
+/* Colores tipo hero en las palabras clave */
+.cf-hosting-title span {
+  color: var(--cf-primary);       /* azul Corefinity, como "Magento stack" */
+}
+
+/* párrafos */
+.cf-hosting-copy p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #374151;                 /* más contraste, estilo hero */
+  margin-bottom: 1.4rem;
+}
+
+.cf-link-inline {
+  color: var(--cf-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cf-link-inline:hover {
+  text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .cf-hosting-intro {
+    margin-top: 3rem;
+    padding: 3.5rem 0 3.5rem;
+  }
+
+  .cf-platforms-strip {
+    gap: 1.2rem;
+  }
+
+  .cf-platform-logo {
+    height: 34px;
+  }
+
+  .cf-hosting-copy {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+/* ===========================
+   FONDO ABSTRACTO ECOMMERCE
+   =========================== */
+
+.cf-abstract-bg {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #e8f3ff 0%, #f6f9ff 55%, #ffffff 100%);
+}
+
+/* Líneas diagonales en toda la sección */
+.cf-abstract-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(0, 88, 200, 0.07) 0,
+    rgba(0, 88, 200, 0.07) 3px,
+    transparent 3px,
+    transparent 18px
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Glow azul en esquina inferior derecha */
+.cf-abstract-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  right: -80px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(2,116,216,0.28), transparent 70%);
+  filter: blur(12px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Garantizar que el contenido quede por encima del fondo */
+.cf-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   TIPOGRAFÍA / HEADINGS
+   =========================== */
+
+.cf-eyebrow {
+  color: #003B99;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.cf-eyebrow-small {
+  color: #0057c7;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+.cf-title {
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+  font-weight: 800;
+  color: #012a50;
+}
+
+.cf-title-inline span {
+  color: #007cff;
+}
+
+/* ===========================
+   TRUSTED BY SLIDER
+   =========================== */
+
+.cf-trusted-wrapper {
+  position: relative;
+  padding: 0 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cf-trusted-track {
+  display: flex;
+  gap: 2.2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.cf-trusted-track::-webkit-scrollbar { display: none; }
+
+.cf-trusted-logo {
+  height: 40px;
+  flex: 0 0 auto;
+  filter: grayscale(1) opacity(.8);
+  transition: transform .2s ease, filter .2s ease;
+}
+.cf-trusted-logo:hover {
+  transform: translateY(-4px) scale(1.03);
+  filter: grayscale(0) opacity(1);
+}
+
+.cf-trusted-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.16);
+  cursor: pointer;
+  color: #0f172a;
+  z-index: 3;
+}
+.cf-trusted-arrow.left  { left: 0.75rem; }
+.cf-trusted-arrow.right { right: 0.75rem; }
+
+/* -------- FONDO ABSTRACTO TIPO COREFINITY -------- */
+
+.cf-abstract-bg {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(2,116,216,0.20), transparent 60%),
+    radial-gradient(circle at center right, rgba(255,123,57,0.18), transparent 55%),
+    linear-gradient(135deg, #e8f3ff, #f6f9ff);
+}
+
+.cf-abstract-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0,88,200,0.07) 0,
+    rgba(0,88,200,0.07) 3px,
+    transparent 3px,
+    transparent 14px
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cf-abstract-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: 12%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(2,116,216,0.23), transparent 65%);
+  filter: blur(12px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.cf-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* -------- TIPOGRAFÍA -------- */
+
+.cf-eyebrow {
+  color: #003B99;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.cf-eyebrow-small {
+  color: #0057c7;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+.cf-title {
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+  font-weight: 800;
+  color: #012a50;
+}
+
+.cf-title-inline span {
+  color: #007cff;
+}
+
+/* -------- TRUSTED BY SLIDER -------- */
+
+.cf-trusted-wrapper {
+  position: relative;
+  padding: 0 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cf-trusted-track {
+  display: flex;
+  gap: 2.2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.cf-trusted-track::-webkit-scrollbar { display: none; }
+
+.cf-trusted-logo {
+  height: 40px;
+  flex: 0 0 auto;
+  filter: grayscale(1) opacity(.8);
+  transition: transform .2s ease, filter .2s ease;
+}
+.cf-trusted-logo:hover {
+  transform: translateY(-4px) scale(1.02);
+  filter: grayscale(0) opacity(1);
+}
+
+.cf-trusted-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.16);
+  cursor: pointer;
+  color: #0f172a;
+  z-index: 3;
+}
+.cf-trusted-arrow.left  { left: 0.75rem; }
+.cf-trusted-arrow.right { right: 0.75rem; }
+
+/* -------- GRID ECOMMERCE HOSTING -------- */
+
+.cf-ecom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+.cf-ecom-card {
+  background: #ffffff;
+  border-radius: 26px;
+  box-shadow: 0 18px 40px rgba(15,23,42,0.16);
+  padding: 2.1rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+}
+
+.cf-ecom-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Iconos redondos centrados */
+.cf-ecom-icon {
+  width: 66px;
+  height: 66px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  background: radial-gradient(circle at 30% 0%, #fff, #dbeafe);
+  color: #0057c7;
+  font-size: 1.8rem;
+  box-shadow: 0 16px 32px rgba(15,23,42,0.18);
+}
+
+/* Variantes de color */
+.cf-ecom-icon-green {
+  background: radial-gradient(circle at 30% 0%, #fff, #d1fae5);
+  color: #059669;
+}
+.cf-ecom-icon-purple {
+  background: radial-gradient(circle at 30% 0%, #fff, #e0e7ff);
+  color: #4f46e5;
+}
+.cf-ecom-icon-orange {
+  background: radial-gradient(circle at 30% 0%, #fff, #fee2c5);
+  color: #f97316;
+}
+
+.cf-ecom-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: .35rem;
+  color: #012a50;
+}
+
+.cf-ecom-text {
+  font-size: .96rem;
+  color: #5b6a83;
+  margin-bottom: 1.4rem;
+  max-width: 22rem;
+}
+
+
+.cf-btn {
+  border-radius: 999px;
+  padding: .6rem 1.4rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .95rem;
+}
+
+.cf-btn-link {
+  background: rgba(0,124,255,0.06);
+  border: 1px solid rgba(0,124,255,0.22);
+  color: #0057c7;
+  text-decoration: none;
+  margin-top: auto;
+  transition: all .2s ease;
+}
+
+.cf-btn-link i {
+  font-size: 1.1rem;
+}
+
+.cf-btn-link:hover {
+  background: #007cff;
+  color: #ffffff;
+  transform: translateX(2px);
+  box-shadow: 0 12px 26px rgba(0,124,255,0.35);
+}
+
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 991.98px) {
+  .cf-trusted-wrapper {
+    padding-inline: 2.5rem;
+  }
+  .cf-ecom-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cf-trusted-wrapper {
+    padding-inline: 2.2rem;
+  }
+  .cf-ecom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =======================
+   CASE STUDIES SLIDER
+   ======================= */
+
+.cf-cases {
+  padding: 5rem 0 4rem;
+}
+
+.cf-cases-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Flechas laterales */
+.cf-cases-arrow {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,23,42,0.12);
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.18);
+  color: #0f172a;
+  flex-shrink: 0;
+  transition: all .2s ease;
+}
+
+.cf-cases-arrow i {
+  font-size: 1.4rem;
+}
+
+.cf-cases-arrow:hover {
+  background: #007cff;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Viewport + track */
+.cf-cases-viewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.cf-cases-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform .35s ease;
+}
+
+/* Cards */
+.cf-case-card {
+  background: #ffffff;
+  border-radius: 26px;
+  border: 1px solid rgba(15,23,42,0.10);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.10);
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  padding: 1.5rem 1.75rem 1.75rem;
+  flex: 0 0 50%;
+  text-align: center;
+}
+
+
+/* Top: zona logo */
+.cf-case-logo {
+  border-bottom: 1px solid rgba(15,23,42,0.10);
+  padding-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cf-case-logo img {
+  max-height: 60px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Texto */
+.cf-case-body p {
+  font-size: .96rem;
+  color: #27354a;
+  line-height: 1.6;
+  margin-bottom: 1.3rem;
+}
+
+.cf-case-person {
+  margin-bottom: 1.4rem;
+}
+
+.cf-case-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.cf-case-role {
+  font-size: .88rem;
+  color: #6b7280;
+}
+
+/* Footer + enlace "Read more" */
+.cf-case-footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+.cf-case-link {
+  font-weight: 600;
+  font-size: .98rem;
+  color: #0057c7;
+  text-decoration: none;
+  position: relative;
+}
+
+.cf-case-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #007cff, #00a1ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+
+.cf-case-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Botón inferior */
+.cf-cases-main-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.cf-cases-main-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: .7rem 1.9rem;
+  background: #007cff;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+  box-shadow: 0 14px 32px rgba(0,124,255,0.35);
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.cf-cases-main-btn:hover {
+  background: #005dc7;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .cf-case-card {
+    flex: 0 0 100%; /* 1 card por vista en tablet/móvil */
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cf-cases-wrapper {
+    gap: 1rem;
+  }
+  .cf-cases-arrow {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* ---------- KEY METRICS (ESTILO TIPO REFERENCIA) ---------- */
+
+.cf-metrics {
+  padding: 5rem 0 4.5rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(0,122,255,0.12), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(255,140,66,0.16), transparent 60%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(0,114,210,0.06) 0,
+      rgba(0,114,210,0.06) 2px,
+      transparent 2px,
+      transparent 14px
+    ),
+    #f5fbff;
+}
+
+.cf-metrics::before,
+.cf-metrics::after {
+  content: "";
+  position: absolute;
+  border-radius: 40px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.cf-metrics::before {
+  top: 18%;
+  right: -80px;
+  width: 320px;
+  height: 220px;
+  background: radial-gradient(circle at 0 0, rgba(255,255,255,0.7), transparent 75%);
+}
+
+.cf-metrics::after {
+  bottom: -60px;
+  left: -90px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(0,94,191,0.20), transparent 70%);
+}
+
+.cf-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 1.8rem;
+  margin-top: 2.4rem;
+}
+
+.cf-metric-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 2.8rem 1.8rem 2.4rem;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(15,23,42,0.14);
+  border: 1px solid rgba(148,163,184,0.2);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.cf-metric-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px rgba(15,23,42,0.2);
+}
+
+/* CONTENEDOR DEL ICONO (PARA CONTROLAR ESPACIOS) */
+.cf-metric-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+/* ICONO CIRCULAR TIPO BADGE */
+.cf-metric-icon {
+  width: 82px;
+  height: 82px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  background: radial-gradient(circle at 30% 0%, #ffffff, #dceeff);
+  box-shadow: 0 14px 28px rgba(15,23,42,0.16);
+}
+
+/* VARIACIONES DE COLOR DEL ICONO */
+.cf-metric-accent-blue   .cf-metric-icon { color: #0066ff; }
+.cf-metric-accent-cyan   .cf-metric-icon { color: #00b3ff; }
+.cf-metric-accent-indigo .cf-metric-icon { color: #4338ca; }
+.cf-metric-accent-orange .cf-metric-icon { color: #f97316; }
+
+.cf-metric-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  margin-bottom: .4rem;
+  color: #00346b;
+  text-transform: uppercase;
+}
+
+.cf-metric-label {
+  font-size: 1.02rem;
+  color: #4b5c78;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* PUNTO NARANJA ABAJO (DETALLE TIPO REFERENCIA) */
+.cf-metric-dot {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff7a1a;
+  box-shadow: 0 8px 18px rgba(255,122,26,0.55);
+}
+
+/* ---------- WHAT YOU GET WITH COREFINITY — TITULO ESTILO PREMIUM ---------- */
+
+#corefinity-benefits .cf-section-heading {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 2.5rem;
+  color: #0d1b2a; /* azul oscuro elegante */
+  text-transform: uppercase;
+}
+
+/* Parte destacada (palabras clave) igual que ECOMMERCE */
+#corefinity-benefits .cf-section-heading span {
+  background: linear-gradient(90deg, #007dff, #2b8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Eyebrow opcional arriba (solo si quieres usarlo) */
+#corefinity-benefits .cf-section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1199.98px) {
+  .cf-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cf-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cf-metric-card {
+    padding-inline: 1.6rem;
+  }
+}
+
+/* ---------- WHAT YOU GET WITH COREFINITY (COLORED) ---------- */
+
+.cf-benefits {
+  background: #f7fafc;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.cf-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3rem 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.cf-benefit-item {
+  text-align: center;
+}
+
+/* Icon container */
+.cf-benefit-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.2rem;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: transform .25s ease;
+}
+
+.cf-benefit-item:hover .cf-benefit-icon {
+  transform: translateY(-4px);
+}
+
+/* Colors */
+.icon-blue {
+  background: linear-gradient(135deg, #007dff, #38a0ff);
+}
+
+.icon-purple {
+  background: linear-gradient(135deg, #6a5bff, #8c7aff);
+}
+
+.icon-green {
+  background: linear-gradient(135deg, #32c96a, #41dd7a);
+}
+
+.icon-orange {
+  background: linear-gradient(135deg, #ff8b2b, #ffb067);
+}
+
+/* Text */
+.cf-benefit-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f2d3d;
+  line-height: 1.45;
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1199px) {
+  .cf-benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .cf-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .cf-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- PERFORMANCE AUDITS SECTION ---------- */
+
+.cf-audits-section {
+  background: #fff7f2;          /* tono suave tipo Corefinity */
+  padding-top: 5rem;            /* más aire respecto a la sección anterior */
+  padding-bottom: 4.5rem;
+}
+
+/* título al estilo ECOMMERCE HOSTING */
+.cf-audits-heading {
+  font-size: clamp(2rem, 3vw + 1rem, 2.6rem);
+  font-weight: 800;
+  color: #0b2140;
+  margin-bottom: 0.75rem;
+}
+.cf-audits-heading span {
+  color: #007cff;
+}
+
+/* ---------- CARRUSEL AUDITS ---------- */
+
+.cf-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.cf-carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform .4s ease;
+}
+
+.cf-audits-table-wrapper {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 22px 40px rgba(15,23,42,0.12);
+  overflow-x: auto;
+  min-width: 100%;              /* un slide por vista */
+}
+
+.cf-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(15,23,42,0.16);
+  cursor: pointer;
+  z-index: 3;
+}
+.cf-carousel-arrow.left  { left: -0.5rem; }
+.cf-carousel-arrow.right { right: -0.5rem; }
+
+.cf-carousel-arrow i {
+  font-size: 1.1rem;
+}
+
+/* ---------- TABLA AUDITS ---------- */
+
+table.cf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85rem;
+}
+
+.cf-table th,
+.cf-table td {
+  padding: .55rem .7rem;
+  border: 1px solid var(--cf-border);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cf-table thead tr:first-child {
+  background: #f0f5ff;
+  font-weight: 700;
+}
+.cf-table-subhead {
+  background: #e5edff;
+  font-weight: 600;
+}
+
+.cf-table tbody tr:nth-child(odd) {
+  background: #f9fafb;
+}
+
+/* fila Corefinity en verde suave */
+.cf-row-corefinity {
+  background: #e6fce9;
+  font-weight: 600;
+}
+
+/* fila diferencia en negritas */
+.cf-row-diff {
+  background: #fdf6e3;
+  font-weight: 700;
+}
+
+/* responsive */
+@media (max-width: 991.98px) {
+  .cf-carousel-arrow.left  { left: 0.2rem; }
+  .cf-carousel-arrow.right { right: 0.2rem; }
+
+  .cf-audits-table-wrapper {
+    padding-inline: 1rem;
+  }
+}
+
+
+/* ---------- VIDEO TESTIMONIALS ---------- */
+
+.cf-video-section {
+  /* sin background aquí para que se vea el degradado de .cf-abstract-bg */
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+/* Slides del carrusel */
+.cf-video-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Marco principal del video */
+.cf-video-frame {
+  border-radius: 26px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.35);
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+}
+
+/* Video real */
+.cf-video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Thumbnails debajo del video */
+.cf-video-thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.cf-video-thumb {
+  width: 90px;
+  height: 70px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.cf-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cf-video-thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.25);
+}
+
+.cf-video-thumb.active {
+  border-color: #007cff;
+}
+
+/* Ajuste de flechas sobre el video en esta sección */
+.cf-video-section .cf-carousel-arrow.left {
+  left: 0.25rem;
+}
+
+.cf-video-section .cf-carousel-arrow.right {
+  right: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .cf-video-frame {
+    max-width: 100%;
+  }
+}
+
+/* ---------- SUPPORT DOCS CTA (estilo tipo "Supported Platforms") ---------- */
+
+.cf-support-cta {
+  position: relative;
+  border-radius: 28px;
+  padding: 2.4rem 2.6rem;
+  background:
+    radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(251,146,60,0.12), transparent 55%),
+    #ffffff;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  overflow: hidden;
+}
+
+/* pequeña barra de acento en el lado izquierdo */
+.cf-support-cta::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18%;
+  bottom: 18%;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #007cff, #0ea5e9);
+}
+
+/* título y texto alineados al sistema de tipografía */
+.cf-support-title {
+  font-size: clamp(1.4rem, 1.2rem + 0.5vw, 1.7rem);
+  font-weight: 700;
+  color: #021325;
+}
+
+.cf-support-text {
+  font-size: 0.96rem;
+  color: #4b5563;
+  max-width: 42rem;
+}
+
+/* Botón elegante tipo "soft primary" */
+.cf-btn-soft-primary {
+  border-radius: 999px;
+  padding: 0.7rem 1.8rem;
+  font-weight: 600;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: linear-gradient(135deg, #007cff, #1d4ed8);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.cf-btn-soft-primary i {
+  font-size: 1.1rem;
+}
+
+.cf-btn-soft-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #0263e0, #1d4ed8);
+  color: #ffffff;
+}
+
+.cf-btn-soft-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .cf-support-cta {
+    padding: 1.8rem 1.6rem;
+  }
+
+  .cf-support-text {
+    max-width: 100%;
+  }
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.cf-footer {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.24), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.2), transparent 55%),
+    #020617;
+  color: var(--cf-text-on-dark);
+  padding: 3.2rem 0 2.2rem;
+  margin-top: 2rem;
+}
+
+.cf-footer-logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #e5f0ff;
+}
+
+.cf-footer-brand-text {
+  font-size: 0.9rem;
+  color: rgba(226, 232, 240, 0.78);
+  margin-top: 0.6rem;
+  max-width: 20rem;
+}
+
+/* headings de columna */
+.cf-footer-heading {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+/* links */
+.cf-footer-link {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(248, 250, 252, 0.85);
+  margin-bottom: 0.45rem;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.cf-footer-link:hover {
+  color: #ffffff;
+  transform: translateX(1px);
+}
+
+/* tarjetas de contacto */
+.cf-footer-contact-card {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 18px;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.cf-footer-contact {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: rgba(226, 232, 240, 0.85);
+}
+
+.cf-footer-contact i {
+  margin-right: 0.5rem;
+  color: #38bdf8;
+}
+
+/* redes sociales */
+.cf-footer-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cf-footer-socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5f0ff;
+  font-size: 1.05rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cf-footer-socials a:hover {
+  background: linear-gradient(135deg, #007cff, #22c55e);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+/* línea inferior */
+.cf-footer-bottom {
+  margin-top: 2.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.9);
+  font-size: 0.82rem;
+  color: rgba(148, 163, 184, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.cf-footer-bottom-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* responsive */
+@media (max-width: 575.98px) {
+  .cf-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

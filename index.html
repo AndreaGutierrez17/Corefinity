@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Corefinity | Managed Cloud & Ecommerce Hosting</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="cf-header fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/logo.svg" alt="Corefinity logo">
+      </a>
+
+      <!-- TOGGLER MOBILE -->
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAV LINKS -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#why">Why Corefinity?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="solutions-magento.html">Solutions</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="get-a-quote.html">Get a quote</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="agency.html">Partners</a>
+          </li>
+
+          <!-- MEGA MENU: RESOURCES -->
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+            </a>
+
+            <div class="dropdown-menu cf-mega-menu" aria-labelledby="resourcesDropdown">
+              <div class="row g-4">
+
+                <!-- CONTENT RESOURCES -->
+                <div class="col-lg-4 cf-resource-group">
+                  <div class="cf-mega-heading">Content Resources</div>
+
+                  <a href="blog.html"
+                     class="cf-resource-item resource-item"
+                     data-title="Blog"
+                     data-desc="News, tutorials and best practices for Magento &amp; WooCommerce."
+                     data-image="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-journal-text" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Blog</div>
+                      <div class="cf-resource-desc">
+                        Deep dives, best practices and real-world ecommerce stories.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="case-studies.html"
+                     class="cf-resource-item resource-item"
+                     data-title="Case Studies"
+                     data-desc="Before/after performance wins, migrations and growth stories."
+                     data-image="https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-card-checklist" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Case Studies</div>
+                      <div class="cf-resource-desc">
+                        Performance wins, migrations and growth.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="testimonials.html"
+                     class="cf-resource-item resource-item"
+                     data-title="Testimonials"
+                     data-desc="Real words from real customers – speed, stability and support."
+                     data-image="https://images.pexels.com/photos/1181562/pexels-photo-1181562.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-chat-quote" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Testimonials</div>
+                      <div class="cf-resource-desc">
+                        Social proof on performance and support.
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- TECHNICAL RESOURCES -->
+                <div class="col-lg-4 cf-resource-group">
+                  <div class="cf-mega-heading">Technical Resources</div>
+
+                  <a href="documentation.html"
+                     class="cf-resource-item resource-item"
+                     data-title="Documentation"
+                     data-desc="Everything you need to run, monitor and optimise your stack."
+                     data-image="https://images.pexels.com/photos/5474295/pexels-photo-5474295.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Documentation</div>
+                      <div class="cf-resource-desc">
+                        Run, monitor and optimise Corefinity environments.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="api-documentation.html"
+                     class="cf-resource-item resource-item"
+                     data-title="API Documentation"
+                     data-desc="How to use the Corefinity dashboard – from team roles to zero-downtime deploys."
+                     data-image="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-braces-asterisk" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">API Documentation</div>
+                      <div class="cf-resource-desc">
+                        Dashboard, roles and deployment workflows.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="faqs.html"
+                     class="cf-resource-item resource-item"
+                     data-title="FAQs"
+                     data-desc="Short, straight answers on performance, pricing, support and SLAs."
+                     data-image="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-question-circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">FAQs</div>
+                      <div class="cf-resource-desc">
+                        Clear answers to the most common questions.
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- PREVIEW PANEL (DYNAMIC IMAGE + TEXT) -->
+                <div class="col-lg-4">
+                  <div class="cf-resource-preview" id="resourcePreview"
+                       data-default-image="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-preview-inner">
+                      <div class="cf-preview-pill">
+                        <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+                        <span>Resource highlight</span>
+                      </div>
+                      <div class="cf-preview-title">Documentation</div>
+                      <div class="cf-preview-text">
+                        Everything you need to run, monitor and optimise your stack.
+                      </div>
+                      <a href="documentation.html"
+                         class="cf-btn cf-btn-ghost cf-preview-btn"
+                         id="previewLink">
+                        View resource <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <!-- CTA FREE DEMO -->
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="nav-link cf-nav-cta" href="get-a-quote.html#demo">Free Demo</a>
+          </li>
+
+          <!-- CONTACT -->
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+  <section id="hero" class="cf-section cf-hero">
+    <video class="cf-hero-bg-video" autoplay muted loop playsinline>
+      <source src="assets/video/corefinity-hero.mp4" type="video/mp4">
+    </video>
+    <div class="cf-hero-bg-overlay"></div>
+
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7">
+          <div class="cf-hero-eyebrow">Always Available &amp; Expert Support</div>
+
+          <h1 class="cf-hero-title">
+            You Can<span>Trust</span>
+          </h1>
+
+          <p class="cf-hero-text">
+            Support that never sleeps – engineers available 24/7/365
+          </p>
+          <a href="get-a-quote.html#contact" class="cf-hero-btn">
+            Chat to an expert →
+          </a>
+          <div class="cf-hero-clouds">
+            <div class="cf-cloud-pill">
+              <img src="assets/google-cloud-logo.svg" alt="Google Cloud">
+            </div>
+            <div class="cf-cloud-pill">
+              <img src="assets/img/amazon_logo.png" alt="AWS">
+            </div>
+            <div class="cf-cloud-pill">
+              <img src="assets/img/azure-logo.png" alt="Azure">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block"></div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SUPPORTED PLATFORMS + HOSTING -->
+<section class="cf-section cf-hosting-intro" id="platforms">
+  <div class="container">
+    <div class="cf-platforms text-center">
+      <h2 class="cf-platforms-title">
+        Supported Platforms &amp; Applications:
+      </h2>
+
+      <div class="cf-platforms-strip">
+        <a href="https://business.adobe.com/products/magento/magento-commerce.html" target="_blank" aria-label="Magento">
+          <img src="assets/img/magneto-logo.png" alt="Magento" class="cf-platform-logo">
+        </a>
+        <a href="https://woocommerce.com/" target="_blank" aria-label="WooCommerce">
+          <img src="assets/woo-logo.svg" alt="WooCommerce" class="cf-platform-logo">
+        </a>
+        <a href="https://wordpress.org/" target="_blank" aria-label="WordPress">
+          <img src="assets/wordpress-logo.svg" alt="WordPress" class="cf-platform-logo">
+        </a>
+        <a href="https://www.drupal.org/" target="_blank" aria-label="Drupal">
+          <img src="assets/img/drupal-logo.png" alt="Drupal" class="cf-platform-logo">
+        </a>
+        <a href="https://www.shopware.com/" target="_blank" aria-label="Shopware">
+          <img src="assets/img/shopware_logo.webp" alt="Shopware" class="cf-platform-logo">
+        </a>
+        <a href="https://vuestorefront.io/" target="_blank" aria-label="Vue Storefront">
+          <img src="assets/vue-storefront-logo.svg" alt="Vue Storefront" class="cf-platform-logo">
+        </a>
+        <a href="https://react.dev/" target="_blank" aria-label="React">
+          <img src="assets/img/React-logo.png" alt="React" class="cf-platform-logo">
+        </a>
+        <a href="https://www.php.net/" target="_blank" aria-label="PHP">
+          <img src="assets/img/php-logo.png" alt="PHP" class="cf-platform-logo">
+        </a>
+        <a href="https://laravel.com/" target="_blank" aria-label="Laravel">
+          <img src="assets/img/laravel-logo.png" alt="Laravel" class="cf-platform-logo">
+        </a>
+        <a href="https://nodejs.org/" target="_blank" aria-label="Node.js">
+          <img src="assets/img/Node.js_logo.png" alt="Node.js" class="cf-platform-logo">
+        </a>
+      </div>
+    </div>
+    <div class="cf-hosting-copy">
+      <h2 class="cf-hosting-title">
+        Hosting: Built by (ex) <span>Developers</span> for <span>Developers</span>
+      </h2>
+
+      <p>
+        Corefinity was founded by Magento developers who were frustrated with slow, inflexible
+        hosting and set out to build the fastest, most reliable eCommerce stack. Our platform is
+        engineered by certified developers and engineers with years of hands-on experience
+        supporting Magento, Shopware and other leading platforms.
+        <a href="#" class="cf-link-inline">Read more about our story</a>
+      </p>
+
+      <p>
+        Every part of the stack is developer and agency friendly, with the tools, documentation and
+        support you need to ship quickly and scale confidently. This is hosting created by people
+        who use it to build stores every day, trusted by hundreds of merchants to power secure and
+        successful eCommerce.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUSTED BY + SLIDING BAR -->
+ <section id="ecom-hosting" class="cf-section cf-abstract-bg">
+  <div class="container">
+    <h3 class="cf-eyebrow text-center mb-3">TRUSTED BY:</h3>
+
+    <div class="cf-trusted-wrapper">
+      <button class="cf-trusted-arrow left" type="button">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <div class="cf-trusted-track" id="trustedTrack">
+        <img src="assets/img/projectors-trusted.png"       alt="EGO"            class="cf-trusted-logo">
+        <img src="assets/img/TFL-logo.webp"                alt="TFL"            class="cf-trusted-logo">
+        <img src="assets/img/logo.png"                     alt="Agency X"       class="cf-trusted-logo">
+        <img src="assets/my1styears copy.svg"              alt="My 1st Years"   class="cf-trusted-logo">
+        <img src="assets/walk-the-walk-shop-trusted.svg"   alt="Walk the Walk"  class="cf-trusted-logo">
+        <img src="assets/wpyc-trusted.svg"                 alt="WPYC"           class="cf-trusted-logo">
+        <img src="assets/jml.svg"                          alt="JML"            class="cf-trusted-logo">
+        <img src="assets/T.H. Baker.svg"                   alt="T.H. Baker"     class="cf-trusted-logo">
+        <img src="assets/img/alcosense-trusted.png"        alt="Alcosense"      class="cf-trusted-logo">
+        <img src="assets/img/frontline-trusted.png"        alt="Frontline"      class="cf-trusted-logo">
+        <img src="assets/img/aphrodite-trusted.png"        alt="Aphrodite"      class="cf-trusted-logo">
+        <img src="assets/img/ribblecycles.png"             alt="Ribble"         class="cf-trusted-logo">
+        <img src="assets/img/trinca-ferro-trusted.png"     alt="Trinca Ferro"   class="cf-trusted-logo">
+        <img src="assets/gjohns--trusted.svg"              alt="G Johns"        class="cf-trusted-logo">
+      </div>
+
+      <button class="cf-trusted-arrow right" type="button">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+    <div class="text-center mt-5 mb-4">
+      <p class="cf-eyebrow-small mb-1">LET US REDEFINE YOUR</p>
+      <h2 class="cf-title cf-title-inline">
+        <span>ECOMMERCE</span> HOSTING
+      </h2>
+    </div>
+    <div class="cf-ecom-grid">
+      <div class="cf-ecom-card">
+        <div class="cf-ecom-top">
+          <div class="cf-ecom-icon">
+            <i class="bi bi-rocket-takeoff-fill"></i>
+          </div>
+          <div class="cf-ecom-title">Performance</div>
+          <p class="cf-ecom-text">
+            Optimised PHP, edge caching and tuned databases to keep every page feeling instant.
+          </p>
+        </div>
+        <a class="cf-btn cf-btn-link" href="performance-hosting.html">
+          Find out more <i class="bi bi-arrow-right-short"></i>
+        </a>
+      </div>
+
+      <!-- SCALABILITY -->
+      <div class="cf-ecom-card">
+        <div class="cf-ecom-top">
+          <div class="cf-ecom-icon cf-ecom-icon-green">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <div class="cf-ecom-title">Scalability</div>
+          <p class="cf-ecom-text">
+            Auto-scaling clusters designed to handle peak trading periods and product drops.
+          </p>
+        </div>
+        <a class="cf-btn cf-btn-link" href="scalability-hosting.html">
+          Find out more <i class="bi bi-arrow-right-short"></i>
+        </a>
+      </div>
+
+      <!-- SECURITY -->
+      <div class="cf-ecom-card">
+        <div class="cf-ecom-top">
+          <div class="cf-ecom-icon cf-ecom-icon-purple">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <div class="cf-ecom-title">Security</div>
+          <p class="cf-ecom-text">
+            Hardened images, WAF and continuous patching to protect your customers and revenue.
+          </p>
+        </div>
+        <a class="cf-btn cf-btn-link" href="security-hosting.html">
+          Find out more <i class="bi bi-arrow-right-short"></i>
+        </a>
+      </div>
+
+      <!-- SUPPORT -->
+      <div class="cf-ecom-card">
+        <div class="cf-ecom-top">
+          <div class="cf-ecom-icon cf-ecom-icon-orange">
+            <i class="bi bi-headset"></i>
+          </div>
+          <div class="cf-ecom-title">Support</div>
+          <p class="cf-ecom-text">
+            Senior engineers on the first line – real answers, not scripted call-center replies.
+          </p>
+        </div>
+        <a class="cf-btn cf-btn-link" href="support-hosting.html">
+          Find out more <i class="bi bi-arrow-right-short"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="case-studies" class="cf-section cf-cases">
+  <div class="container">
+    <div class="cf-cases-wrapper">
+      <button class="cf-cases-arrow left" type="button" aria-label="Previous case study">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <div class="cf-cases-viewport">
+        <div class="cf-cases-track">
+
+          <!-- CARD 1 - EGO -->
+          <article class="cf-case-card">
+            <div class="cf-case-logo">
+              <img src="assets/ego-logo.svg" alt="EGO logo">
+            </div>
+
+            <div class="cf-case-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,
+                vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus.
+              </p>
+              <div class="cf-case-person">
+                <div class="cf-case-name">Manuel Perez</div>
+                <div class="cf-case-role">Head of Development</div>
+              </div>
+            </div>
+
+            <div class="cf-case-footer">
+              <!-- TODOS LOS BOTONES REDIRIGEN -->
+              <a href="case-study-ego.html" class="cf-case-link">
+                Read more
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 2 - Mercedes-Benz -->
+          <article class="cf-case-card">
+            <div class="cf-case-logo">
+              <img src="assets/img/mercedes-logo.png" alt="Mercedes-Benz South West logo">
+            </div>
+
+            <div class="cf-case-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,
+                vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus.
+              </p>
+              <div class="cf-case-person">
+                <div class="cf-case-name">Manuel Perez</div>
+                <div class="cf-case-role">Head of Development</div>
+              </div>
+            </div>
+
+            <div class="cf-case-footer">
+              <a href="case-study-mercedes.html" class="cf-case-link">
+                Read more
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 3 - ejemplo extra -->
+          <article class="cf-case-card">
+            <div class="cf-case-logo">
+              <img src="assets/img/frontline-trusted.png" alt="Client logo">
+            </div>
+
+            <div class="cf-case-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet, lorem
+                ut aliquet scelerisque, ipsum urna dictum nibh, sed ultricies neque tortor non leo.
+              </p>
+              <div class="cf-case-person">
+                <div class="cf-case-name">Sarah Johnson</div>
+                <div class="cf-case-role">Ecommerce Director</div>
+              </div>
+            </div>
+
+            <div class="cf-case-footer">
+              <a href="case-study-frontline.html" class="cf-case-link">
+                Read more
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 4 - ejemplo extra -->
+          <article class="cf-case-card">
+            <div class="cf-case-logo">
+              <img src="assets/img/aphrodite-trusted.png" alt="Client logo">
+            </div>
+
+            <div class="cf-case-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.
+                Donec porta, lacus eget commodo imperdiet, mi justo malesuada erat.
+              </p>
+              <div class="cf-case-person">
+                <div class="cf-case-name">James Walker</div>
+                <div class="cf-case-role">CTO</div>
+              </div>
+            </div>
+
+            <div class="cf-case-footer">
+              <a href="case-study-aphrodite.html" class="cf-case-link">
+                Read more
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Flecha derecha -->
+      <button class="cf-cases-arrow right" type="button" aria-label="Next case study">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+
+    </div>
+
+    <!-- Botón inferior: ver todos -->
+    <div class="cf-cases-main-cta">
+      <a href="case-studies.html" class="cf-cases-main-btn">
+        View all of our Case Studies
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- KEY METRICS -->
+<section id="key-metrics" class="cf-section cf-metrics">
+  <div class="container">
+
+    <p class="cf-eyebrow-small text-center mb-1">Key metrics that actually matter</p>
+    <h2 class="cf-title text-center mb-4">
+      <span>Key</span> Metrics
+    </h2>
+
+    <div class="cf-metrics-grid">
+
+      <!-- 24/7/365 -->
+      <article class="cf-metric-card cf-metric-accent-blue">
+        <div class="cf-metric-icon-wrap">
+          <div class="cf-metric-icon">
+            <i class="bi bi-headset"></i>
+          </div>
+        </div>
+        <h3 class="cf-metric-value">24/7/365</h3>
+        <p class="cf-metric-label">UK based global<br>support</p>
+        <span class="cf-metric-dot"></span>
+      </article>
+
+      <!-- 99.99% -->
+      <article class="cf-metric-card cf-metric-accent-cyan">
+        <div class="cf-metric-icon-wrap">
+          <div class="cf-metric-icon">
+            <i class="bi bi-hand-thumbs-up"></i>
+          </div>
+        </div>
+        <h3 class="cf-metric-value">99.99%</h3>
+        <p class="cf-metric-label">Uptime average<br>across environments</p>
+        <span class="cf-metric-dot"></span>
+      </article>
+
+      <!-- 7 minutes -->
+      <article class="cf-metric-card cf-metric-accent-indigo">
+        <div class="cf-metric-icon-wrap">
+          <div class="cf-metric-icon">
+            <i class="bi bi-stopwatch"></i>
+          </div>
+        </div>
+        <h3 class="cf-metric-value">7 minutes</h3>
+        <p class="cf-metric-label">Average emergency<br>response time</p>
+        <span class="cf-metric-dot"></span>
+      </article>
+
+      <!-- Fastest -->
+      <article class="cf-metric-card cf-metric-accent-orange">
+        <div class="cf-metric-icon-wrap">
+          <div class="cf-metric-icon">
+            <i class="bi bi-trophy"></i>
+          </div>
+        </div>
+        <h3 class="cf-metric-value">Fastest</h3>
+        <p class="cf-metric-label">Magento hosting<br>world-wide</p>
+        <span class="cf-metric-dot"></span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- WHAT YOU GET WITH COREFINITY -->
+<section id="corefinity-benefits" class="cf-section cf-benefits">
+  <div class="container">
+
+       <h2 class="cf-section-heading text-center mb-5">
+        <span>What You Get</span> with Corefinity
+        </h2>
+
+
+    <div class="cf-benefits-grid">
+
+      <!-- 1 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-blue">
+          <i class="bi bi-bag-check"></i>
+        </div>
+        <p class="cf-benefit-text">
+          Magento and Adobe Commerce specialists
+        </p>
+      </article>
+
+      <!-- 2 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-purple">
+          <i class="bi bi-shield-lock"></i>
+        </div>
+        <p class="cf-benefit-text">
+          GDPR compliant processes and data handling
+        </p>
+      </article>
+
+      <!-- 3 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-green">
+          <i class="bi bi-person-lines-fill"></i>
+        </div>
+        <p class="cf-benefit-text">
+          Direct access to engineers, no first line filters
+        </p>
+      </article>
+
+      <!-- 4 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-orange">
+          <i class="bi bi-diagram-3"></i>
+        </div>
+        <p class="cf-benefit-text">
+          Control Panel with CI/CD pipelines
+        </p>
+      </article>
+
+      <!-- 5 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-blue">
+          <i class="bi bi-graph-up-arrow"></i>
+        </div>
+        <p class="cf-benefit-text">
+          Scheduled infrastructure and performance reviews
+        </p>
+      </article>
+
+      <!-- 6 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-purple">
+          <i class="bi bi-file-lock2"></i>
+        </div>
+        <p class="cf-benefit-text">
+          Security-first culture with evidence packs on request
+        </p>
+      </article>
+
+      <!-- 7 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-green">
+          <i class="bi bi-clipboard-check"></i>
+        </div>
+        <p class="cf-benefit-text">
+          Post incident reviews and documented runbooks
+        </p>
+      </article>
+
+      <!-- 8 -->
+      <article class="cf-benefit-item">
+        <div class="cf-benefit-icon icon-orange">
+          <i class="bi bi-eye"></i>
+        </div>
+        <p class="cf-benefit-text">
+          Observability access, logs and APM for faster diagnosis
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- PERFORMANCE AUDITS -->
+<section id="performance-audits" class="cf-section cf-audits-section">
+  <div class="container">
+
+    <!-- Eyebrow + título al estilo ecommerce -->
+    <p class="cf-eyebrow-small text-center mb-2">
+      PROOF BEATS PROMISES
+    </p>
+    <h2 class="cf-audits-heading text-center">
+      <span>Performance</span> Audits
+    </h2>
+
+    <p class="cf-section-subheading text-center">
+      Proof beats promises. Explore our performance audits against leading competitors.
+      We are faster 100% of the time.
+    </p>
+
+    <div class="cf-carousel mt-4">
+      <button class="cf-carousel-arrow left" type="button">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <div class="cf-carousel-track">
+        <!-- SLIDE 1 -->
+        <div class="cf-audits-table-wrapper">
+          <table class="cf-table">
+            <thead>
+            <tr>
+              <th>Environment</th>
+              <th colspan="2">Home</th>
+              <th colspan="2">Category</th>
+              <th colspan="2">Product</th>
+              <th colspan="2">Basket</th>
+            </tr>
+            <tr class="cf-table-subhead">
+              <th></th>
+              <th>Uncached</th><th>Cached</th>
+              <th>Uncached</th><th>Cached</th>
+              <th>Uncached</th><th>Cached</th>
+              <th>Uncached</th><th>Cached</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Live</td>
+              <td>1164.17</td><td>114.99</td>
+              <td>2516.79</td><td>137.84</td>
+              <td>2593.97</td><td>132.44</td>
+              <td>1443.52</td><td>N/A</td>
+            </tr>
+            <tr class="cf-row-corefinity">
+              <td>Corefinity</td>
+              <td>336.49</td><td>114.04</td>
+              <td>655.54</td><td>105.53</td>
+              <td>697.39</td><td>105.40</td>
+              <td>403.06</td><td>N/A</td>
+            </tr>
+            <tr class="cf-row-diff">
+              <td>Performance Difference</td>
+              <td>71.10%</td><td>0.82%</td>
+              <td>73.95%</td><td>23.44%</td>
+              <td>73.11%</td><td>20.41%</td>
+              <td>72.08%</td><td>N/A</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="cf-audits-table-wrapper">
+          <table class="cf-table">
+            <thead>
+            <tr>
+              <th>Environment</th>
+              <th colspan="2">Home</th>
+              <th colspan="2">Category</th>
+              <th colspan="2">Product</th>
+              <th colspan="2">Basket</th>
+            </tr>
+            <tr class="cf-table-subhead">
+              <th></th>
+              <th>Uncached</th><th>Cached</th>
+              <th>Uncached</th><th>Cached</th>
+              <th>Uncached</th><th>Cached</th>
+              <th>Uncached</th><th>Cached</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Competitor X</td>
+              <td>1300.10</td><td>180.40</td>
+              <td>2800.75</td><td>200.90</td>
+              <td>2600.12</td><td>170.10</td>
+              <td>1500.00</td><td>N/A</td>
+            </tr>
+            <tr class="cf-row-corefinity">
+              <td>Corefinity</td>
+              <td>360.22</td><td>120.10</td>
+              <td>690.55</td><td>110.40</td>
+              <td>720.19</td><td>108.20</td>
+              <td>420.00</td><td>N/A</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <button class="cf-carousel-arrow right" type="button">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="text-center mt-4">
+      <!-- CAMBIA href A LA URL REAL -->
+      <a href="/performance-audits.html" class="cf-btn cf-btn-primary">
+        View all of our Performance Audits
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- WATCH CLIENT TESTIMONIALS (VIDEO) -->
+<section id="client-testimonials" class="cf-section cf-video-section cf-abstract-bg">
+  <div class="container">
+    <p class="cf-eyebrow-small text-center mb-1">
+      Watch our
+    </p>
+    <h2 class="cf-title cf-title-inline text-center mb-4">
+      <span>Client</span> testimonials
+    </h2>
+
+
+
+    <!-- Carrusel de videos -->
+    <div class="cf-carousel position-relative mt-3">
+      <button class="cf-carousel-arrow left" type="button">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <div class="cf-carousel-track">
+        <!-- SLIDE 1 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-1.mp4"
+              poster="assets/img/testimonial-1.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-2.mp4"
+              poster="assets/img/testimonial-2.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-3.mp4"
+              poster="assets/img/testimonial-3.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-4.mp4"
+              poster="assets/img/testimonial-4.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+      </div>
+
+      <button class="cf-carousel-arrow right" type="button">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="cf-video-thumbs">
+      <button class="cf-video-thumb active" type="button" data-video-index="0">
+        <img src="assets/img/testimonial-1.jpg" alt="Client testimonial 1">
+      </button>
+      <button class="cf-video-thumb" type="button" data-video-index="1">
+        <img src="assets/img/testimonial-2.jpg" alt="Client testimonial 2">
+      </button>
+      <button class="cf-video-thumb" type="button" data-video-index="2">
+        <img src="assets/img/testimonial-3.jpg" alt="Client testimonial 3">
+      </button>
+      <button class="cf-video-thumb" type="button" data-video-index="3">
+        <img src="assets/img/testimonial-4.jpg" alt="Client testimonial 4">
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT DOCS CTA -->
+<section class="cf-section">
+  <div class="container">
+    <div class="cf-support-cta d-lg-flex align-items-center justify-content-between gap-4">
+      <div>
+        <p class="cf-eyebrow-small mb-1">Need Technical Details?</p>
+        <h3 class="cf-support-title mb-2">
+          Deep-dive into our Support Docs
+        </h3>
+        <p class="mb-0 cf-support-text">
+          Explore our full support documentation with guides, runbooks and escalation procedures.
+          Everything you need to understand how Corefinity operates behind the scenes.
+        </p>
+      </div>
+
+      <div class="mt-3 mt-lg-0 text-lg-end">
+        <a href="/support-docs.html" class="cf-btn cf-btn-soft-primary">
+          View Support Docs
+          <i class="bi bi-arrow-right-short"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="cf-footer">
+  <div class="container">
+    <div class="row gy-4 align-items-start">
+
+      <!-- Marca + descripción corta -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cf-footer-brand">
+          <div class="cf-footer-logo">Corefinity</div>
+          <p class="cf-footer-brand-text">
+            High-performance ecommerce hosting, engineered for Magento and modern commerce stacks.
+          </p>
+        </div>
+
+        <div class="cf-footer-socials mt-3">
+          <a href="https://twitter.com" aria-label="Corefinity on X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://www.instagram.com" aria-label="Corefinity on Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com" aria-label="Corefinity on LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navegación principal -->
+      <div class="col-lg-4 col-md-6">
+        <div class="row g-4">
+          <div class="col-6">
+            <div class="cf-footer-heading">Company</div>
+            <a href="/careers" class="cf-footer-link">Careers</a>
+            <a href="/partners" class="cf-footer-link">Partners</a>
+            <a href="/why-corefinity" class="cf-footer-link">Why Corefinity</a>
+            <a href="/who-we-are" class="cf-footer-link">Who we are</a>
+            <a href="/support" class="cf-footer-link">Support</a>
+            <a href="/contact" class="cf-footer-link">Contact</a>
+            <a href="/certifications" class="cf-footer-link">Certifications</a>
+          </div>
+
+          <div class="col-6">
+            <div class="cf-footer-heading">Solutions</div>
+            <a href="/solutions/magento-1-hosting" class="cf-footer-link">Magento 1 Hosting</a>
+            <a href="/solutions/magento-2-hosting" class="cf-footer-link">Magento 2 Hosting</a>
+            <a href="/solutions/shopware-hosting" class="cf-footer-link">Shopware Hosting</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacto: UK + US -->
+      <div class="col-lg-4 col-md-12">
+        <div class="cf-footer-contact-card">
+          <div class="cf-footer-heading">United Kingdom</div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-telephone"></i> +44 800 464 7255
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-envelope"></i> info@corefinity.com
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-geo-alt"></i>
+            Corefinity, Joseph's Well Offices, Hanover Lane, Leeds, LS3 1AB
+          </div>
+        </div>
+
+        <div class="cf-footer-contact-card mt-3">
+          <div class="cf-footer-heading">United States</div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-telephone"></i> +1 833 818 8090
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-envelope"></i> info@corefinity.com
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-geo-alt"></i>
+            1701 Rhode Island Avenue Northwest, Washington, DC 20036, US
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Línea inferior -->
+    <div class="cf-footer-bottom">
+      <span>Copyright © 2025 Corefinity. All rights reserved.</span>
+      <span class="cf-footer-bottom-links">
+        <a href="/privacy" class="cf-footer-link d-inline">Privacy</a>
+        <span>·</span>
+        <a href="/terms" class="cf-footer-link d-inline">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
