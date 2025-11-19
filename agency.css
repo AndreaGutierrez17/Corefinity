@@ -2,3 +2,386 @@
 .cf-bg-gradient-clean {
   background: linear-gradient(135deg, #e8f3ff 0%, #f5f7ff 50%, #ffe9df 100%);
 }
+
+/* CONTROL PANEL DEMO – video + layout */
+.cf-panel-demo {
+  /* ya hereda el degradado CON rayas de .cf-abstract-bg */
+}
+
+.cf-panel-demo-video {
+  border-radius: 26px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 24px 50px rgba(15,23,42,0.30);
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.cf-panel-demo-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* un poco de espacio en mobile */
+@media (max-width: 767.98px) {
+  #control-panel-demo .cf-title {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ==========================
+   BENEFITS FOR AGENCIES
+   (GRADIENT SIN RAYAS)
+   ========================== */
+
+.cf-agency-benefits {
+  padding: 5rem 0 4.5rem;
+  margin-top: 1.5rem; /* lo separa visualmente de la sección anterior */
+  background:
+    radial-gradient(circle at top left, rgba(2,116,216,0.16), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(255,123,57,0.18), transparent 65%),
+    linear-gradient(135deg, #e8f3ff, #f6f9ff);
+  border-top: 1px solid rgba(148,163,184,0.22);
+}
+
+/* Grid propio para esta sección (reusa el estilo de tarjetas ECOM) */
+.cf-agency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.1rem 2rem;
+  margin-top: 3rem;
+}
+
+/* Variantes extra de color para íconos si hace falta */
+.cf-ecom-icon-blue {
+  background: radial-gradient(circle at 30% 0%, #ffffff, #dbeafe);
+  color: #0057c7;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1199.98px) {
+  .cf-agency-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cf-agency-benefits {
+    padding: 4rem 0 3.5rem;
+  }
+  .cf-agency-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================
+   ANIMACIONES IGUALES A LAS TARJETAS ANTERIORES
+   ========================== */
+
+/* Fade-in suave al cargar */
+.cf-agency-benefits .cf-ecom-card {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: cfFadeUp 0.7s ease-out forwards;
+}
+
+/* Animación escalonada */
+.cf-agency-benefits .cf-ecom-card:nth-child(1) { animation-delay: 0.10s; }
+.cf-agency-benefits .cf-ecom-card:nth-child(2) { animation-delay: 0.20s; }
+.cf-agency-benefits .cf-ecom-card:nth-child(3) { animation-delay: 0.30s; }
+.cf-agency-benefits .cf-ecom-card:nth-child(4) { animation-delay: 0.40s; }
+.cf-agency-benefits .cf-ecom-card:nth-child(5) { animation-delay: 0.50s; }
+
+@keyframes cfFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover igual que las otras tarjetas */
+.cf-agency-benefits .cf-ecom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* Ícono animado como siempre */
+.cf-agency-benefits .cf-ecom-icon {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cf-agency-benefits .cf-ecom-card:hover .cf-ecom-icon {
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+/* ==========================
+   PARTNER FLOW SECTION
+   (fondo degradado SIN rayas)
+   ========================== */
+
+.cf-partner-section {
+  padding: 5rem 0 4.5rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(2,116,216,0.10), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(255,123,57,0.12), transparent 60%),
+    linear-gradient(135deg, #e9f3ff, #fdf8ff);
+}
+
+/* -------- Pasos horizontales -------- */
+
+.cf-partner-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  flex-wrap: nowrap;
+  margin-bottom: 3.5rem;
+}
+
+.cf-partner-step {
+  flex: 0 0 210px;
+  max-width: 230px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(15,23,42,0.16);
+  border: 1px solid rgba(148,163,184,0.35);
+  padding: 1.4rem 1.3rem 1.5rem;
+  text-align: center;
+  position: relative;
+
+  /* animación de entrada (mismo keyframe cfFadeUp que ya tienes) */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: cfFadeUp 0.7s ease-out forwards;
+}
+
+/* delays escalonados */
+.cf-partner-step:nth-of-type(1) { animation-delay: 0.08s; }
+.cf-partner-step:nth-of-type(2) { animation-delay: 0.16s; }
+.cf-partner-step:nth-of-type(3) { animation-delay: 0.24s; }
+.cf-partner-step:nth-of-type(4) { animation-delay: 0.32s; }
+
+.cf-partner-step-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.cf-partner-step-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #012a50;
+  margin: 0;
+}
+
+.cf-partner-step-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Hover coherente con tus tarjetas */
+.cf-partner-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.20);
+}
+
+/* Flechas entre pasos */
+
+.cf-partner-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(15,23,42,0.20);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #0f172a;
+}
+
+.cf-partner-arrow i {
+  font-size: 1.6rem;
+}
+
+/* -------- Snapshot -------- */
+
+.cf-partner-snapshot {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.cf-partner-snapshot-title {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  color: #021526;
+}
+
+.cf-partner-snapshot-title span {
+  background: linear-gradient(90deg, #007dff, #2b8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cf-partner-list {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin: 0;
+}
+
+.cf-partner-list li {
+  font-size: 0.98rem;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+}
+
+/* -------- Responsive -------- */
+
+@media (max-width: 991.98px) {
+  .cf-partner-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cf-partner-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cf-partner-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cf-partner-step {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cf-partner-arrow {
+    transform: rotate(90deg);
+  }
+
+  .cf-partner-snapshot {
+    padding-inline: 0.75rem;
+  }
+}
+
+/* ==========================
+   MIGRATION + BADGES SECTION
+   (SIN RAYAS, MISMO ESTILO)
+   ========================== */
+
+.cf-migration-section {
+  padding: 5rem 0 4.5rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(2,116,216,0.12), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(255,123,57,0.12), transparent 60%),
+    linear-gradient(135deg, #edf4ff, #fdf8ff);
+}
+
+/* Tarjeta principal de texto */
+.cf-migration-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.4rem 2.3rem 2.2rem;
+  box-shadow: 0 20px 45px rgba(15,23,42,0.16);
+  border: 1px solid rgba(148,163,184,0.35);
+
+  opacity: 0;
+  transform: translateY(24px);
+  animation: cfFadeUp 0.7s ease-out forwards;
+}
+
+/* Párrafos */
+.cf-migration-text {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+/* Título badges */
+.cf-migration-badges-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #021525;
+}
+
+/* span con mismo estilo degradado */
+.cf-migration-badges-title span,
+.cf-migration-card .cf-title-inline span {
+  background: linear-gradient(90deg, #007dff, #2b8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid de badges */
+.cf-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3rem 1.8rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cf-badge {
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  box-shadow: 0 12px 30px rgba(15,23,42,0.14);
+  border: 1px solid rgba(148,163,184,0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cf-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.2);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .cf-migration-card {
+    padding-inline: 1.7rem;
+  }
+  .cf-badges-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cf-migration-card {
+    padding-inline: 1.3rem;
+  }
+  .cf-badges-grid {
+    grid-template-columns: 1fr;
+  }
+}

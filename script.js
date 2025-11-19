@@ -221,9 +221,30 @@ function initVideoThumbs() {
 
 function initMobileNavClose() {
   const nav = document.getElementById('mainNav');
-  if (!nav || typeof bootstrap === 'undefined' || !bootstrap.Collapse) return;
+  const toggler = document.querySelector('.navbar-toggler');
+  if (!nav || !toggler || typeof bootstrap === 'undefined' || !bootstrap.Collapse) return;
 
   const collapse = bootstrap.Collapse.getOrCreateInstance(nav, { toggle: false });
+
+  const syncTogglerState = () => {
+    const isOpen = nav.classList.contains('show');
+    toggler.classList.toggle('collapsed', !isOpen);
+    toggler.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  toggler.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation(); // Keep the toggle to a single controlled action
+    if (nav.classList.contains('show')) {
+      collapse.hide();
+    } else {
+      collapse.show();
+    }
+  });
+
+  nav.addEventListener('shown.bs.collapse', syncTogglerState);
+  nav.addEventListener('hidden.bs.collapse', syncTogglerState);
+
   const navLinks = nav.querySelectorAll('a');
 
   const maybeClose = (event) => {
@@ -237,6 +258,8 @@ function initMobileNavClose() {
   navLinks.forEach((link) => {
     link.addEventListener('click', maybeClose);
   });
+
+  syncTogglerState();
 }
 
 // Fallback logic for pages using the standalone video player + thumbs pattern
