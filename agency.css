@@ -1,0 +1,4 @@
+/* Fondo degradado limpio (sin rayas) reutilizado en agencies */
+.cf-bg-gradient-clean {
+  background: linear-gradient(135deg, #e8f3ff 0%, #f5f7ff 50%, #ffe9df 100%);
+}

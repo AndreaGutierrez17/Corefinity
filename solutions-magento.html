@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Corefinity | Solution Magento</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="solutions.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER (igual que index) -->
+<header class="cf-header fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/logo.svg" alt="Corefinity logo">
+      </a>
+
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#why">Why Corefinity?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="solutions-magento.html">Solutions</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="get-a-quote.html">Get a quote</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="agency.html">Partners</a>
+          </li>
+
+          <!-- MEGA MENU -->
+          <li class="nav-item dropdown dropdown-mega position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+            </a>
+
+            <div class="dropdown-menu cf-mega-menu" aria-labelledby="resourcesDropdown">
+              <div class="row g-4">
+
+                <!-- Content resources -->
+                <div class="col-lg-4 cf-resource-group">
+                  <div class="cf-mega-heading">Content Resources</div>
+
+                  <a href="blog.html"
+                     class="cf-resource-item resource-item"
+                     data-title="Blog"
+                     data-desc="News, tutorials and best practices for Magento &amp; WooCommerce."
+                     data-image="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-journal-text"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Blog</div>
+                      <div class="cf-resource-desc">
+                        Deep dives, best practices and real-world ecommerce stories.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="case-studies.html"
+                     class="cf-resource-item resource-item"
+                     data-title="Case Studies"
+                     data-desc="Before/after performance wins, migrations and growth stories."
+                     data-image="https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-card-checklist"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Case Studies</div>
+                      <div class="cf-resource-desc">
+                        Performance wins, migrations and growth.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="index.html#client-testimonials"
+                     class="cf-resource-item resource-item"
+                     data-title="Testimonials"
+                     data-desc="Real words from real customers – speed, stability and support."
+                     data-image="https://images.pexels.com/photos/1181562/pexels-photo-1181562.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-chat-quote"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Testimonials</div>
+                      <div class="cf-resource-desc">
+                        Social proof on performance and support.
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Technical resources -->
+                <div class="col-lg-4 cf-resource-group">
+                  <div class="cf-mega-heading">Technical Resources</div>
+
+                  <a href="documentation.html"
+                     class="cf-resource-item resource-item"
+                     data-title="Documentation"
+                     data-desc="Everything you need to run, monitor and optimise your stack."
+                     data-image="https://images.pexels.com/photos/5474295/pexels-photo-5474295.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">Documentation</div>
+                      <div class="cf-resource-desc">
+                        Run, monitor and optimise Corefinity environments.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="api-documentation.html"
+                     class="cf-resource-item resource-item"
+                     data-title="API Documentation"
+                     data-desc="How to use the Corefinity dashboard – from team roles to zero-downtime deploys."
+                     data-image="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-braces-asterisk"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">API Documentation</div>
+                      <div class="cf-resource-desc">
+                        Dashboard, roles and deployment workflows.
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="#faqs"
+                     class="cf-resource-item resource-item"
+                     data-title="FAQs"
+                     data-desc="Short, straight answers on performance, pricing, support and SLAs."
+                     data-image="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-icon">
+                      <i class="bi bi-question-circle"></i>
+                    </div>
+                    <div>
+                      <div class="cf-resource-title">FAQs</div>
+                      <div class="cf-resource-desc">
+                        Clear answers to the most common questions.
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Preview panel -->
+                <div class="col-lg-4">
+                  <div class="cf-resource-preview" id="resourcePreview"
+                       data-default-image="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200">
+                    <div class="cf-resource-preview-inner">
+                      <div class="cf-preview-pill">
+                        <i class="bi bi-lightning-charge"></i>
+                        <span>Resource highlight</span>
+                      </div>
+                      <div class="cf-preview-title">Documentation</div>
+                      <div class="cf-preview-text">
+                        Everything you need to run, monitor and optimise your stack.
+                      </div>
+                      <a href="documentation.html"
+                         class="cf-btn cf-btn-ghost cf-preview-btn"
+                         id="previewLink">
+                        View resource <i class="bi bi-arrow-right-short"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="nav-link cf-nav-cta" href="get-a-quote.html#demo">Free Demo</a>
+          </li>
+
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+
+ <section id="hero" class="cf-section cf-hero">
+    <video class="cf-hero-bg-video" autoplay muted loop playsinline>
+      <source src="assets/video/solutions-hero.mp4" type="video/mp4">
+    </video>
+    <div class="cf-hero-bg-overlay"></div>
+
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7">
+          <div class="cf-hero-eyebrow">Fully managed & expert Magento support</div>
+
+          <h1 class="cf-hero-title">
+            Fully Managed<span> Magento Hosting</span>
+          </h1>
+
+          <p class="cf-hero-text">
+            Modern Magento infrastructure that grows with you – predictable costs, transparent reporting and expert help on call
+          </p>
+          <a href="get-a-quote.html#contact" class="cf-hero-btn">
+            Chat to an expert →
+          </a>
+      </div>
+
+      <!-- Logo Magento a la derecha (como en wireframe) -->
+      <div class="col-lg-5 d-flex justify-content-lg-end justify-content-center mt-4 mt-lg-0">
+        <div class="cf-hero-magento-logo">
+          <img src="assets/img/magneto-logo.png" alt="Magento logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PLATFORM OVERVIEW + TRUSTED BAR -->
+        <section id="platform-overview"
+         class="cf-section cf-abstract-bg cf-magento-overview">
+      <div class="container">
+    <!-- CLOUD LOGOS -->
+    <div class="cf-magento-clouds text-center mb-4">
+      <img src="assets/google-cloud-logo.svg" alt="Google Cloud">
+      <img src="assets/img/amazon_logo.png"   alt="AWS">
+      <img src="assets/img/azure-logo.png"    alt="Azure">
+    </div>
+
+    <!-- PLATFORM OVERVIEW + CHECKLIST -->
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-7">
+        <h2 class="cf-title cf-title-inline">
+          Platform <span>Overview</span>
+        </h2>
+
+        <p class="cf-magento-overview-text">
+          Magento offers unmatched flexibility and scalability, but that power comes with complexity.
+          Large catalogues, intricate integrations and peak sales periods can overwhelm standard hosting.
+        </p>
+        <p class="cf-magento-overview-text">
+          Corefinity’s platform is purpose built for Magento, delivering the performance, security and
+          stability needed to keep stores fast and revenue flowing, no matter the traffic or customisation.
+        </p>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="cf-eyebrow-small mb-2">
+          With Corefinity, you get:
+        </div>
+        <ul class="cf-checklist">
+          <li>Consistent checkout performance during promotions and peaks.</li>
+          <li>A support team that have been working with Magento since the early days.</li>
+          <li>Safe releases with staging, rollbacks and zero-downtime deploys for updates.</li>
+        </ul>
+      </div>
+
+      
+    <!-- TRUSTED BY (mismo slider del home) -->
+    <div class="cf-magento-trusted-wrapper mb-5">
+      <div class="cf-magento-trusted-heading text-center mb-3">
+        TRUSTED BY
+      </div>
+      <div class="cf-trusted-wrapper">
+        <button class="cf-trusted-arrow left" type="button">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <div class="cf-trusted-track" id="trustedTrack">
+          <img src="assets/img/projectors-trusted.png"    alt="EGO"          class="cf-trusted-logo">
+          <img src="assets/img/TFL-logo.webp"             alt="TFL"          class="cf-trusted-logo">
+          <img src="assets/img/logo.png"                  alt="Agency X"     class="cf-trusted-logo">
+          <img src="assets/my1styears copy.svg"           alt="My 1st Years" class="cf-trusted-logo">
+          <img src="assets/walk-the-walk-shop-trusted.svg" alt="Walk the Walk" class="cf-trusted-logo">
+          <img src="assets/wpyc-trusted.svg"              alt="WPYC"         class="cf-trusted-logo">
+          <img src="assets/jml.svg"                       alt="JML"          class="cf-trusted-logo">
+          <img src="assets/T.H. Baker.svg"                alt="T.H. Baker"   class="cf-trusted-logo">
+          <img src="assets/img/alcosense-trusted.png"     alt="Alcosense"    class="cf-trusted-logo">
+          <img src="assets/img/frontline-trusted.png"     alt="Frontline"    class="cf-trusted-logo">
+          <img src="assets/img/aphrodite-trusted.png"     alt="Aphrodite"    class="cf-trusted-logo">
+          <img src="assets/img/ribblecycles.png"          alt="Ribble"       class="cf-trusted-logo">
+          <img src="assets/img/trinca-ferro-trusted.png"  alt="Trinca Ferro" class="cf-trusted-logo">
+          <img src="assets/gjohns--trusted.svg"           alt="G Johns"      class="cf-trusted-logo">
+        </div>
+
+        <button class="cf-trusted-arrow right" type="button">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3. KEY FEATURES (MAGENTO) -->
+<section id="magento-key-features" class="cf-section cf-magento-keyfeatures">
+  <div class="container">
+
+    <!-- Título principal -->
+    <div class="text-center mb-5">
+      <h2 class="cf-keyfeatures-heading">
+        <span>Key</span> Features
+      </h2>
+    </div>
+
+    <div class="row g-5 align-items-start">
+      <!-- Columna izquierda: Performance -->
+      <div class="col-lg-7">
+        <h3 class="cf-feature-heading">Performance</h3>
+        <p class="cf-magento-overview-text">
+          We optimise every Magento environment for catalogue size, extension load and checkout flow.
+          Caching, database tuning and queue workers are configured to keep pages fast and responsive,
+          even during heavy traffic or large-scale promotions.
+        </p>
+
+        <h4 class="cf-feature-subheading">Included:</h4>
+        <ul class="cf-checklist">
+          <li>Edge and server-side caching (with object cache).</li>
+          <li>CDN integration and media offload options.</li>
+          <li>PHP worker tuning and async queues for busy checkouts.</li>
+          <li>Observability: metrics, logs, alerts and APM hooks.</li>
+        </ul>
+      </div>
+
+      <!-- Columna derecha: 5 métricas con iconos -->
+      <div class="col-lg-5">
+        <div class="cf-key-metrics-column">
+          <!-- Homepage -->
+          <article class="cf-key-metric cf-metric-accent-blue">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-house-door"></i>
+            </div>
+            <div class="cf-key-metric-value">200ms</div>
+            <div class="cf-key-metric-label">Homepage FTTB</div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+
+          <!-- Category -->
+          <article class="cf-key-metric cf-metric-accent-cyan">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-grid-3x3-gap"></i>
+            </div>
+            <div class="cf-key-metric-value">350ms</div>
+            <div class="cf-key-metric-label">Category FTTB</div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+
+          <!-- Product -->
+          <article class="cf-key-metric cf-metric-accent-indigo">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-bag"></i>
+            </div>
+            <div class="cf-key-metric-value">400ms</div>
+            <div class="cf-key-metric-label">Product FTTB</div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+
+          <!-- Cart -->
+          <article class="cf-key-metric cf-metric-accent-blue">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-cart"></i>
+            </div>
+            <div class="cf-key-metric-value">440ms</div>
+            <div class="cf-key-metric-label">Cart FTTB</div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+
+          <!-- Checkout -->
+          <article class="cf-key-metric cf-metric-accent-orange">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-credit-card-2-front"></i>
+            </div>
+            <div class="cf-key-metric-value">500ms</div>
+            <div class="cf-key-metric-label">Checkout FTTB</div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 cards debajo: Scalability / 0 Downtime / Security -->
+    <div class="cf-magento-feature-cards">
+      <article class="cf-magento-feature-card">
+        <h3>Scalability</h3>
+        <p>
+          Your site should perform at its best even during peak traffic. Corefinity’s platform delivers
+          speed and reliability when demand is highest, with fully automated scaling that adapts within
+          seconds. Proven under extreme conditions, our stack has handled over 20 orders per second
+          without slowdown, keeping your business running smoothly at any scale.
+        </p>
+      </article>
+
+      <article class="cf-magento-feature-card">
+        <h3>0 Downtime Deploys</h3>
+        <p>
+          One of the standout features of our control panel is the fully automated, zero-downtime
+          deployment pipeline configured for all your environments. This allows your developers or
+          development agency to deploy incremental updates without worrying about website downtime.
+        </p>
+      </article>
+
+      <article class="cf-magento-feature-card">
+        <h3>Security</h3>
+        <p>
+          Security is built in for Magento from edge to database: WAF and DDoS protection up front,
+          hardened OS and PHP builds, SSH keys with 2FA and IP allow lists. Encrypted offsite backups
+          with point in time restore, continuous monitoring and rapid patching of high-risk issues,
+          plus PCI ready controls and an evidence pack when you need it.
+        </p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- 4. 24/7 UK-based Support -->
+<section id="uk-support" class="cf-section cf-support-section">
+  <div class="container">
+
+    <!-- Título principal -->
+    <div class="text-center mb-5">
+      <h2 class="cf-title cf-title-inline">
+        24/7 UK-based <span>Support</span>
+      </h2>
+    </div>
+
+    <div class="row g-5 align-items-start">
+      <!-- Columna izquierda: texto + checklist -->
+      <div class="col-lg-7" data-aos="fade-right">
+        <h3 class="cf-feature-heading">24/7 UK-based Support</h3>
+        <p class="cf-magento-overview-text">
+          You speak with the engineers who run your platform, not a first-line contacts.
+          Support is available 24/7 by Slack, phone and ticket. The same team stays with your
+          account so context isn’t lost, and continuous monitoring lets us act before users are
+          affected.
+        </p>
+
+        <h4 class="cf-feature-subheading">Included:</h4>
+        <ul class="cf-checklist">
+          <li>Direct access to senior engineers</li>
+          <li>24/7 monitoring and incident response</li>
+          <li>Named engineers assigned to your account</li>
+          <li>Post-incident reviews and documented runbooks</li>
+        </ul>
+      </div>
+
+      <!-- Columna derecha: 4 métricas (6 minute…) -->
+      <div class="col-lg-5">
+        <div class="cf-key-metrics-column">
+          <!-- Card 1 -->
+          <article class="cf-key-metric cf-metric-accent-blue"
+                   data-aos="fade-up" data-aos-delay="0">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-headset"></i>
+            </div>
+            <div class="cf-key-metric-value">6 minute</div>
+            <div class="cf-key-metric-label">
+              Average<br>Emergency<br>Response<br>Time
+            </div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="cf-key-metric cf-metric-accent-cyan"
+                   data-aos="fade-up" data-aos-delay="80">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-headset"></i>
+            </div>
+            <div class="cf-key-metric-value">6 minute</div>
+            <div class="cf-key-metric-label">
+              Average<br>Emergency<br>Response<br>Time
+            </div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="cf-key-metric cf-metric-accent-indigo"
+                   data-aos="fade-up" data-aos-delay="160">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-headset"></i>
+            </div>
+            <div class="cf-key-metric-value">6 minute</div>
+            <div class="cf-key-metric-label">
+              Average<br>Emergency<br>Response<br>Time
+            </div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="cf-key-metric cf-metric-accent-orange"
+                   data-aos="fade-up" data-aos-delay="240">
+            <div class="cf-key-metric-icon">
+              <i class="bi bi-headset"></i>
+            </div>
+            <div class="cf-key-metric-value">6 minute</div>
+            <div class="cf-key-metric-label">
+              Average<br>Emergency<br>Response<br>Time
+            </div>
+            <span class="cf-key-metric-dot"></span>
+          </article>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="magento-testimonials" class="cf-section cf-magento-testimonial cf-bg-gradient-clean">
+  <div class="container">
+
+    <!-- TÍTULO IGUAL AL HOME (span azul) -->
+    <h2 class="cf-title text-center mb-4">
+      Don’t Just Take Our <span>Word for It..</span>
+    </h2>
+
+    <!-- CARRUSEL (SOLO 1 SLIDE) -->
+    <div class="cf-testimonial-carousel">
+      <button class="cf-carousel-arrow left" type="button">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <div class="cf-carousel-track">
+        <article class="cf-testimonial-card">
+          <div class="cf-testimonial-body">
+            <p>
+              When it came time to reviewing our current hosting, we contacted multiple providers.
+              Corefinity came back quickly and professionally. After narrowing the options down, and
+              after several calls, we chose Corefinity, one of the reasons was because they were more
+              than happy to allow us to talk freely with their current customers to get genuine
+              feedback about their experiences, without Corefinity being present.
+            </p>
+            <p>
+              The support team are passionate, incredibly experienced, and so very helpful.
+              They won’t blame other factors like code, they will investigate every option,
+              and provide great solutions and recommendations.
+            </p>
+            <p>
+              After a few months of moving to them, we monitored our data, we have seen zero
+              downtime, our revenue has increased, and all our core web vitals have improved.
+            </p>
+            <p>
+              All in all, moving to Corefinity was one of the best business decisions we’ve made.
+            </p>
+          </div>
+
+          <div class="cf-testimonial-profile">
+            <div class="cf-testimonial-logo">Angling Direct</div>
+
+            <!-- IMAGEN REAL EN CÍRCULO -->
+            <img src="assets/img/director.jpg" alt="Bryn Thomas" class="cf-testimonial-avatar">
+
+            <div class="cf-testimonial-name">Bryn Thomas</div>
+            <div class="cf-testimonial-role">Director</div>
+          </div>
+        </article>
+      </div>
+
+      <button class="cf-carousel-arrow right" type="button">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- BLOQUE MIGRATION CTA CON MISMO ESTILO DE HOME -->
+    <div class="cf-migration-deadline text-center">
+      <h3 class="cf-title">
+        Have a <span>migration deadline?</span>
+      </h3>
+      <p>Speak to an engineer today and map out a low-risk cutover plan.</p>
+      <a href="get-a-quote.html#contact" class="cf-btn cf-btn-primary-magento">
+        Chat to an expert
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 5. THE STACK -->
+<section id="magento-stack" class="cf-section cf-magento-stack cf-bg-hero-striped">
+  <div class="container">
+
+    <!-- Título con mismo estilo que el home -->
+    <h2 class="cf-title text-center mb-5">
+      The <span>Stack</span>
+    </h2>
+
+    <div class="cf-stack-grid">
+
+      <!-- Fila 1 -->
+      <div class="cf-stack-row">
+        <!-- Izquierda -->
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-orange">
+            <i class="bi bi-headset"></i>
+          </div>
+          <h3>24/7 UK Based Global support</h3>
+          <p>
+            We pride ourselves on our 24/7 UK based global support available by phone, via tickets or even on live
+            chat. You can always talk to our experts when you need us.
+          </p>
+        </article>
+
+        <!-- Punto central -->
+        <div class="cf-stack-timeline-dot"></div>
+
+        <!-- Derecha -->
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-blue">
+            <i class="bi bi-activity"></i>
+          </div>
+          <h3>Proactive monitoring</h3>
+          <p>
+            User journey monitoring coupled with extensive resource monitoring allows us to create a pipeline of
+            warnings across the infrastructure that our engineers work from 24/7 to ensure these warnings do not
+            become a critical issue.
+          </p>
+        </article>
+      </div>
+
+      <!-- Fila 2 -->
+      <div class="cf-stack-row">
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-blue">
+            <i class="bi bi-calendar3"></i>
+          </div>
+          <h3>Scheduled infrastructure reviews</h3>
+          <p>
+            Extensive service level agreements offering scheduled infrastructure reviews with senior engineers to work
+            with your team in improving, future proofing and cost savings across the infrastructure.
+          </p>
+        </article>
+
+        <div class="cf-stack-timeline-dot"></div>
+
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-orange">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <h3>Scheduled performance audits</h3>
+          <p>
+            Extensive service level agreements offering scheduled performance and comparison audits with workshops to
+            work through the issues and meet performance requirements.
+          </p>
+        </article>
+      </div>
+
+      <!-- Fila 3 -->
+      <div class="cf-stack-row">
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-indigo">
+            <i class="bi bi-arrow-repeat"></i>
+          </div>
+          <h3>0 Downtime deployments</h3>
+          <p>
+            The stack offers a built-in 0-deployment pipeline that is customisable to your requirements and work flows
+            with functionality such as auto-deployments to staging environments and easy rollbacks.
+          </p>
+        </article>
+
+        <div class="cf-stack-timeline-dot"></div>
+
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-blue">
+            <i class="bi bi-journal-text"></i>
+          </div>
+          <h3>Log management</h3>
+          <p>
+            We’ve taken log management to another level by implementing the best of open source with our platform
+            agnostic control panel allowing you to view and manage logs of multiple servers and services in place.
+          </p>
+        </article>
+      </div>
+
+      <!-- Fila 4 -->
+      <div class="cf-stack-row">
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-blue">
+            <i class="bi bi-cloud-check"></i>
+          </div>
+          <h3>Platform agnostic</h3>
+          <p>
+            Full automation around a range of trusted cloud providers allows flexibility around how much your
+            infrastructure is hated where, helping you meet your disaster recovery requirements.
+          </p>
+        </article>
+
+        <div class="cf-stack-timeline-dot"></div>
+
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-cyan">
+            <i class="bi bi-shield-lock"></i>
+          </div>
+          <h3>SSL Management</h3>
+          <p>
+            Corefinity partners with Let's Encrypt to provide universal, fully automated SSL certificates across it’s
+            infrastructure. We also have options for custom SSLs as well as Extensive Validation SSls that can be
+            purchased.
+          </p>
+        </article>
+      </div>
+
+      <!-- Fila 5 -->
+      <div class="cf-stack-row">
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-indigo">
+            <i class="bi bi-cpu"></i>
+          </div>
+          <h3>Ramdisk</h3>
+          <p>
+            Our software stack uniquely reduces I/O and HDD operations drastically by placing all of the Magento and
+            your custom/plugins codebase on a RAM disk.
+          </p>
+        </article>
+
+        <div class="cf-stack-timeline-dot"></div>
+
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-orange">
+            <i class="bi bi-layers"></i>
+          </div>
+          <h3>Snapshots</h3>
+          <p>
+            Automated, scheduled and high-frequency snapshots managed in one place with multiple options on how to
+            recover them. From recovery in place to creating a new server or even a new URL for your application, we’ve
+            got them all.
+          </p>
+        </article>
+      </div>
+
+      <!-- Fila 6 -->
+      <div class="cf-stack-row">
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-blue">
+            <i class="bi bi-speedometer2"></i>
+          </div>
+          <h3>Performance focused</h3>
+          <p>
+            Our stack has been built with a focus around platform, years of benchmarking and engineering means a
+            fraction of the load times of your current infastructure.
+          </p>
+        </article>
+
+        <div class="cf-stack-timeline-dot"></div>
+
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-cyan">
+            <i class="bi bi-globe2"></i>
+          </div>
+          <h3>DNS management</h3>
+          <p>
+            Corefinity teams up with Cloudflare to provide fully cloud-based DNS management for your sites and domains
+            that is managed in one place.
+          </p>
+        </article>
+      </div>
+
+      <!-- Fila 7 -->
+      <div class="cf-stack-row">
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-indigo">
+            <i class="bi bi-database-gear"></i>
+          </div>
+          <h3>Advanced database clusters</h3>
+          <p>
+            We offer the cutting edge in database clusters allowing high availability as well as high performance across
+            a customisable and manageable number of servers.
+          </p>
+        </article>
+
+        <div class="cf-stack-timeline-dot"></div>
+
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-blue">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          <h3>Load balancer</h3>
+          <p>
+            High capacity, highly available and scalable solution built on a trusted and battle proven technology.
+          </p>
+        </article>
+      </div>
+
+      <!-- Fila 8 -->
+      <div class="cf-stack-row">
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-orange">
+            <i class="bi bi-credit-card2-front"></i>
+          </div>
+          <h3>PCI Compliant stack</h3>
+          <p>
+            Our stack has been designed fully PCI compliant and we have helped hundreds of merchants become compliant
+            by migrating to our modernised solution.
+          </p>
+        </article>
+
+        <div class="cf-stack-timeline-dot"></div>
+
+        <article class="cf-stack-card">
+          <div class="cf-stack-icon cf-stack-icon-indigo">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <h3>VPN</h3>
+          <p>
+            A military grade encryption and cloud aware solution offering functionality such as two factor
+            authentication and intrusion detection system, ensures your store is not another statistic in cyber crime.
+          </p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- 8. TRANSPARENT PRICING -->
+  <section class="cf-section cf-magento-pricing">
+    <div class="container">
+      <h2 class="cf-section-title text-center mb-4">Transparent Pricing</h2>
+
+      <div class="cf-pricing-grid">
+        <!-- Small -->
+        <article class="cf-pricing-card">
+          <h3 class="cf-pricing-tier">Small</h3>
+          <div class="cf-pricing-body">
+            <h4>Supports:</h4>
+            <p>~50,000 sessions per month<br>~500 orders per month<br>1 store view</p>
+            <h4>Your Solution</h4>
+            <p>
+              Kubernetes Managed Cluster + auto scaling<br>
+              Instances – 2<br>
+              Total CPUs – 4 Cores<br>
+              Total Memory – 16GB<br>
+              Usable Disk – 125GB<br>
+              Environments – 2 (1 Production + 1 UAT)<br>
+              SLA Support – Enhanced
+            </p>
+          </div>
+          <div class="cf-pricing-footer">£250 Per Month</div>
+        </article>
+
+        <!-- Medium -->
+        <article class="cf-pricing-card">
+          <h3 class="cf-pricing-tier">Medium</h3>
+          <div class="cf-pricing-body">
+            <h4>Supports:</h4>
+            <p>~100,000 sessions per month<br>~1,000 orders per month<br>3 store views</p>
+            <h4>Your Solution</h4>
+            <p>
+              Kubernetes Managed Cluster + auto scaling<br>
+              Instances – 2<br>
+              Total CPUs – 8 Cores<br>
+              Total Memory – 32GB<br>
+              Usable Disk – 250GB<br>
+              Environments – 2 (1 Production + 1 UAT)<br>
+              SLA Support – Enhanced
+            </p>
+          </div>
+          <div class="cf-pricing-footer">£425 Per Month</div>
+        </article>
+
+        <!-- Large -->
+        <article class="cf-pricing-card">
+          <h3 class="cf-pricing-tier">Large</h3>
+          <div class="cf-pricing-body">
+            <h4>Supports:</h4>
+            <p>~250,000 sessions per month<br>~2,500 orders per month<br>5 store views</p>
+            <h4>Your Solution</h4>
+            <p>
+              Kubernetes Managed Cluster + auto scaling<br>
+              Instances – 4<br>
+              Total CPUs – 16 Cores<br>
+              Total Memory – 64GB<br>
+              Usable Disk – 500GB<br>
+              Environments – 3 (1 Production + 2 UAT)<br>
+              SLA Support – Enhanced
+            </p>
+          </div>
+          <div class="cf-pricing-footer">£775 Per Month</div>
+        </article>
+
+        <!-- X-Large -->
+        <article class="cf-pricing-card">
+          <h3 class="cf-pricing-tier">X-Large</h3>
+          <div class="cf-pricing-body">
+            <h4>Supports:</h4>
+            <p>~750,000 sessions per month<br>~7,500 orders per month<br>10 store views</p>
+            <h4>Your Solution</h4>
+            <p>
+              Kubernetes Managed Cluster + auto scaling<br>
+              Instances – 4<br>
+              Total CPUs – 32 Cores<br>
+              Total Memory – 128GB<br>
+              Usable Disk – 1000GB<br>
+              Environments – 4 (1 Production + 3 UAT)<br>
+              SLA Support – Enhanced
+            </p>
+          </div>
+          <div class="cf-pricing-footer">£1,375 Per Month</div>
+        </article>
+      </div>
+
+      <div class="cf-pricing-enterprise text-center">
+        <a href="get-a-quote.html#contact" class="cf-btn cf-btn-outline-magento">
+          Click here to find out about our Enterprise packages
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- 9. AFFORDABLE LUXURY -->
+<section id="magento-affordable" class="cf-section cf-bg-gradient-clean">
+
+  <div class="container">
+
+    <!-- TÍTULO Y TEXTO -->
+    <div class="text-center mb-5">
+      <h2 class="cf-title">
+        Affordable <span>Luxury</span>
+      </h2>
+      <p class="cf-affordable-text">
+        Affordable luxury is built on a multi pillar system, the first pillar is the principle of:
+        faster, is cheaper.
+      </p>
+      <p class="cf-affordable-text">
+        If you have a web page that takes 1 second and we take this page and make it twice as fast,
+        it will also mean that it will take half of the resource or in other words, cost to run that
+        same very web page going forward.
+      </p>
+      <p class="cf-affordable-text">
+        The second principle is our smart auto scaling and the third pillar is the CFactor and this
+        is unique to Corefinity and it’s stack. For example, you would not find dedicated RAM disk
+        to run all of your code application in any other setup, but you see it as common practice
+        with Corefinity, on average saving over 30% on page speed load times.
+      </p>
+    </div>
+
+    <!-- TARJETA DEL GRÁFICO -->
+    <div class="cf-affordable-chart-card">
+      <!-- EJE IZQUIERDO / DERECHO -->
+      <div class="cf-affordable-axis cf-affordable-axis-price">PRICE</div>
+      <div class="cf-affordable-axis cf-affordable-axis-solutions">SOLUTIONS</div>
+
+      <!-- COLUMNAS -->
+      <div class="cf-affordable-columns">
+
+        <!-- Corefinity Stack on GCP -->
+        <div class="cf-affordable-column cf-height-low">
+          <div class="cf-affordable-logo-pair">
+            <div class="cf-affordable-logo-circle cf-logo-corefinity">
+              <img src="assets/img/logo-corefinity.png" alt="Corefinity logo">
+            </div>
+            <div class="cf-affordable-logo-circle">
+              <img src="assets/google-cloud-logo.svg" alt="GCP logo">
+            </div>
+          </div>
+          <div class="cf-affordable-frame">
+            <span class="cf-affordable-dot"></span>
+          </div>
+          <p class="cf-affordable-label">
+            Corefinity<br>
+            Stack on GCP
+          </p>
+        </div>
+
+        <!-- Corefinity Stack on AWS -->
+        <div class="cf-affordable-column cf-height-low">
+          <div class="cf-affordable-logo-pair">
+            <div class="cf-affordable-logo-circle cf-logo-corefinity">
+              <img src="assets/img/logo-corefinity.png" alt="Corefinity logo">
+            </div>
+            <div class="cf-affordable-logo-circle">
+              <img src="assets/img/amazon_logo.png" alt="AWS logo">
+            </div>
+          </div>
+          <div class="cf-affordable-frame">
+            <span class="cf-affordable-dot"></span>
+          </div>
+          <p class="cf-affordable-label">
+            Corefinity<br>
+            Stack on AWS
+          </p>
+        </div>
+
+        <!-- GCP -->
+        <div class="cf-affordable-column cf-height-medium">
+          <div class="cf-affordable-logo-single">
+            <div class="cf-affordable-logo-circle">
+              <img src="assets/google-cloud-logo.svg" alt="GCP logo">
+            </div>
+          </div>
+          <div class="cf-affordable-frame">
+            <span class="cf-affordable-dot"></span>
+          </div>
+          <p class="cf-affordable-label">
+            GCP
+          </p>
+        </div>
+
+        <!-- AWS -->
+        <div class="cf-affordable-column cf-height-high">
+          <div class="cf-affordable-logo-single">
+            <div class="cf-affordable-logo-circle">
+              <img src="assets/img/amazon_logo.png" alt="AWS logo">
+            </div>
+          </div>
+          <div class="cf-affordable-frame">
+            <span class="cf-affordable-dot"></span>
+          </div>
+          <p class="cf-affordable-label">
+            AWS
+          </p>
+        </div>
+
+        <!-- Bare Metal -->
+        <div class="cf-affordable-column cf-height-short">
+          <div class="cf-affordable-logo-single">
+            <div class="cf-affordable-logo-circle">
+              <img src="assets/img/logo-baremetal.png" alt="Bare Metal logo">
+            </div>
+          </div>
+          <div class="cf-affordable-frame">
+            <span class="cf-affordable-dot"></span>
+          </div>
+          <p class="cf-affordable-label">
+            Bare Metal
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="cf-migration-process" class="cf-section cf-bg-beige">
+  <div class="container">
+
+    <div class="cf-migration-box">
+      <h2 class="cf-title text-center mb-4">
+        Fully Managed <span>Migration Process</span>
+      </h2>
+
+      <p>
+        Corefinity manages the entire setup and migration process from start to finish.
+        Using our battle proven process and comprehensive pre and post migration checklists,
+        we can ensure we set everything up the right way from the start whilst giving you and
+        your developers the opportunity to test on staging.
+      </p>
+
+      <p>
+        Our process ensures that you experience minimal downtime (roughly 15 minutes) at the
+        time of migration that is usually performed in the early hours of the morning.
+        We deal with all integrations such as Payment Gateways as well as ERP systems.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WATCH CLIENT TESTIMONIALS (VIDEO) -->
+<section id="client-testimonials" class="cf-section cf-video-section cf-abstract-bg">
+  <div class="container">
+    <p class="cf-eyebrow-small text-center mb-1">
+      Watch our
+    </p>
+    <h2 class="cf-title cf-title-inline text-center mb-4">
+      <span>Client</span> testimonials
+    </h2>
+
+
+
+    <!-- Carrusel de videos -->
+    <div class="cf-carousel position-relative mt-3">
+      <button class="cf-carousel-arrow left" type="button">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <div class="cf-carousel-track">
+        <!-- SLIDE 1 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-1.mp4"
+              poster="assets/img/testimonial-1.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-2.mp4"
+              poster="assets/img/testimonial-2.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-3.mp4"
+              poster="assets/img/testimonial-3.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="cf-video-slide">
+          <div class="cf-video-frame">
+            <video
+              src="assets/videos/testimonial-4.mp4"
+              poster="assets/img/testimonial-4.jpg"
+              controls
+            ></video>
+          </div>
+        </div>
+      </div>
+
+      <button class="cf-carousel-arrow right" type="button">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="cf-video-thumbs">
+      <button class="cf-video-thumb active" type="button" data-video-index="0">
+        <img src="assets/img/testimonial-1.jpg" alt="Client testimonial 1">
+      </button>
+      <button class="cf-video-thumb" type="button" data-video-index="1">
+        <img src="assets/img/testimonial-2.jpg" alt="Client testimonial 2">
+      </button>
+      <button class="cf-video-thumb" type="button" data-video-index="2">
+        <img src="assets/img/testimonial-3.jpg" alt="Client testimonial 3">
+      </button>
+      <button class="cf-video-thumb" type="button" data-video-index="3">
+        <img src="assets/img/testimonial-4.jpg" alt="Client testimonial 4">
+      </button>
+    </div>
+  </div>
+</section>
+  <section class="cf-section cf-faqs-section">
+  <div class="container">
+
+    <!-- Título con span azul -->
+    <h2 class="cf-title text-center mb-5">
+      Frequently <span>Asked Questions</span>
+    </h2>
+
+    <!-- FAQs -->
+    <div class="cf-faqs-wrapper" id="faqs">
+
+      <div class="accordion" id="magentoFaq">
+
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqOneHeading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+              How quickly can we get live on Corefinity?
+            </button>
+          </h2>
+          <div id="faqOne" class="accordion-collapse collapse show"
+            aria-labelledby="faqOneHeading" data-bs-parent="#magentoFaq">
+            <div class="accordion-body">
+              Most standard Magento migrations go live within a few weeks depending on
+              complexity, testing windows and your team’s availability.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqTwoHeading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+              Do you offer a trial or proof of concept?
+            </button>
+          </h2>
+          <div id="faqTwo" class="accordion-collapse collapse"
+            aria-labelledby="faqTwoHeading" data-bs-parent="#magentoFaq">
+            <div class="accordion-body">
+              Yes – we can spin up a staging environment to benchmark performance
+              against your current stack before you commit.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqThreeHeading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+              Can you support multi-store and international setups?
+            </button>
+          </h2>
+          <div id="faqThree" class="accordion-collapse collapse"
+            aria-labelledby="faqThreeHeading" data-bs-parent="#magentoFaq">
+            <div class="accordion-body">
+              Absolutely. Many of our customers run complex multi-store environments with
+              localised catalogues, currencies and payment options.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqFourHeading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+              Do you offer reseller or agency programmes?
+            </button>
+          </h2>
+          <div id="faqFour" class="accordion-collapse collapse"
+            aria-labelledby="faqFourHeading" data-bs-parent="#magentoFaq">
+            <div class="accordion-body">
+              Yes, we work closely with agencies and solution partners. Talk to us about
+              partner pricing and joint go-to-market options.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="cf-footer">
+  <div class="container">
+    <div class="row gy-4 align-items-start">
+
+      <!-- Marca + descripción corta -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cf-footer-brand">
+          <div class="cf-footer-logo">Corefinity</div>
+          <p class="cf-footer-brand-text">
+            High-performance ecommerce hosting, engineered for Magento and modern commerce stacks.
+          </p>
+        </div>
+
+        <div class="cf-footer-socials mt-3">
+          <a href="https://twitter.com" aria-label="Corefinity on X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://www.instagram.com" aria-label="Corefinity on Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com" aria-label="Corefinity on LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navegación principal -->
+      <div class="col-lg-4 col-md-6">
+        <div class="row g-4">
+          <div class="col-6">
+            <div class="cf-footer-heading">Company</div>
+            <a href="/careers" class="cf-footer-link">Careers</a>
+            <a href="/partners" class="cf-footer-link">Partners</a>
+            <a href="/why-corefinity" class="cf-footer-link">Why Corefinity</a>
+            <a href="/who-we-are" class="cf-footer-link">Who we are</a>
+            <a href="/support" class="cf-footer-link">Support</a>
+            <a href="/contact" class="cf-footer-link">Contact</a>
+            <a href="/certifications" class="cf-footer-link">Certifications</a>
+          </div>
+
+          <div class="col-6">
+            <div class="cf-footer-heading">Solutions</div>
+            <a href="/solutions/magento-1-hosting" class="cf-footer-link">Magento 1 Hosting</a>
+            <a href="/solutions/magento-2-hosting" class="cf-footer-link">Magento 2 Hosting</a>
+            <a href="/solutions/shopware-hosting" class="cf-footer-link">Shopware Hosting</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacto: UK + US -->
+      <div class="col-lg-4 col-md-12">
+        <div class="cf-footer-contact-card">
+          <div class="cf-footer-heading">United Kingdom</div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-telephone"></i> +44 800 464 7255
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-envelope"></i> info@corefinity.com
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-geo-alt"></i>
+            Corefinity, Joseph's Well Offices, Hanover Lane, Leeds, LS3 1AB
+          </div>
+        </div>
+
+        <div class="cf-footer-contact-card mt-3">
+          <div class="cf-footer-heading">United States</div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-telephone"></i> +1 833 818 8090
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-envelope"></i> info@corefinity.com
+          </div>
+          <div class="cf-footer-contact">
+            <i class="bi bi-geo-alt"></i>
+            1701 Rhode Island Avenue Northwest, Washington, DC 20036, US
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Línea inferior -->
+    <div class="cf-footer-bottom">
+      <span>Copyright © 2025 Corefinity. All rights reserved.</span>
+      <span class="cf-footer-bottom-links">
+        <a href="/privacy" class="cf-footer-link d-inline">Privacy</a>
+        <span>·</span>
+        <a href="/terms" class="cf-footer-link d-inline">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

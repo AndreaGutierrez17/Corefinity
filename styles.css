@@ -46,7 +46,7 @@ a {
   color: inherit;
 }
 
-/* ---------- HEADER / NAV ---------- */
+/* ---------- HEADER ---------- */
 
 .cf-header {
   background-color: rgba(255,255,255,0.96);
@@ -91,7 +91,7 @@ a {
   position: static;
 }
 
-/* Contenedor mega menú con animación suave */
+
 .dropdown-menu.cf-mega-menu {
   width: 100%;
   border-radius: 24px;
@@ -105,7 +105,7 @@ a {
   transition: opacity 0.18s ease-out, transform 0.18s ease-out;
 }
 
-/* Bootstrap le agrega .show cuando abre → aquí animamos */
+
 .dropdown-menu.cf-mega-menu.show {
   opacity: 1;
   transform: translateY(0);
@@ -188,7 +188,7 @@ a {
   overflow: hidden;
 }
 
-/* ESTE ES EL VELO – LO DEJAMOS TAL CUAL */
+
 .cf-resource-preview::before {
   content: "";
   position: absolute;
@@ -230,7 +230,6 @@ a {
   align-self: flex-start;
 }
 
-/* Botón ghost genérico por si lo usas en más lados */
 .cf-btn.cf-btn-ghost {
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.7);
@@ -270,7 +269,7 @@ a {
 
 /* -------------------- HERO -------------------- */
 
-/* ---------- HERO CON VIDEO DE FONDO ---------- */
+
 
 .cf-hero {
   position: relative;
@@ -278,7 +277,6 @@ a {
   padding: 6rem 0;
 }
 
-/* Video ocupa todo el fondo del hero */
 .cf-hero-bg-video {
   position: absolute;
   inset: 0;
@@ -288,7 +286,7 @@ a {
   z-index: -2;
 }
 
-/* Velo azul claro con un toque cálido (brief style) */
+
 .cf-hero-bg-overlay {
   position: absolute;
   inset: 0;
@@ -325,12 +323,12 @@ a {
 .cf-hero-text {
   font-size: 1.05rem;
   max-width: 560px;
-  color: #f9fafb;           /* claro porque fondo es oscuro/azul */
+  color: #f9fafb; 
   text-shadow: 0 2px 8px rgba(15,23,42,0.6);
   margin-bottom: 1.8rem;
 }
 
-/* Botón principal (link) */
+
 
 .cf-hero-btn {
   display: inline-flex;
@@ -352,7 +350,6 @@ a {
   color: var(--cf-primary-dark);
 }
 
-/* Logos de partners – solo imagen, más grandes */
 
 .cf-hero-clouds {
   display: flex;
@@ -401,7 +398,7 @@ a {
 /* ---------- SUPPORTED PLATFORMS + HOSTING INTRO ---------- */
 
 .cf-hosting-intro {
-  margin-top: 4rem;           /* separación del hero */
+  margin-top: 4rem;
   padding: 5rem 0 4.5rem;
 
   background:
@@ -411,7 +408,7 @@ a {
   border-top: 1px solid rgba(148,163,184,0.22);
 }
 
-/* Título "Supported Platforms..." */
+
 .cf-platforms {
   margin-bottom: 3rem;
 }
@@ -424,7 +421,7 @@ a {
   margin-bottom: 1.8rem;
 }
 
-/* Tira de logos */
+
 .cf-platforms-strip {
   display: flex;
   flex-wrap: wrap;
@@ -449,7 +446,7 @@ a {
   transform: translateY(-3px);
 }
 
-/* Copy de hosting */
+
 .cf-hosting-copy {
   max-width: 820px;
   margin: 3.5rem auto 0 auto;
@@ -459,20 +456,20 @@ a {
 .cf-hosting-title {
   font-size: clamp(2rem, 2.5vw + 1rem, 2.6rem);
   font-weight: 800;
-  color: var(--cf-primary-dark);  /* como el hero */
+  color: var(--cf-primary-dark); 
   margin-bottom: 1.7rem;
 }
 
-/* Colores tipo hero en las palabras clave */
+
 .cf-hosting-title span {
-  color: var(--cf-primary);       /* azul Corefinity, como "Magento stack" */
+  color: var(--cf-primary);  
 }
 
-/* párrafos */
+
 .cf-hosting-copy p {
   font-size: 1.08rem;
   line-height: 1.85;
-  color: #374151;                 /* más contraste, estilo hero */
+  color: #374151;  
   margin-bottom: 1.4rem;
 }
 
@@ -486,7 +483,6 @@ a {
   text-decoration: underline;
 }
 
-/* responsive */
 @media (max-width: 768px) {
   .cf-hosting-intro {
     margin-top: 3rem;
@@ -1530,7 +1526,7 @@ table.cf-table {
   overflow: hidden;
 }
 
-/* pequeña barra de acento en el lado izquierdo */
+
 .cf-support-cta::before {
   content: "";
   position: absolute;
@@ -1542,7 +1538,7 @@ table.cf-table {
   background: linear-gradient(180deg, #007cff, #0ea5e9);
 }
 
-/* título y texto alineados al sistema de tipografía */
+
 .cf-support-title {
   font-size: clamp(1.4rem, 1.2rem + 0.5vw, 1.7rem);
   font-weight: 700;
@@ -1555,7 +1551,7 @@ table.cf-table {
   max-width: 42rem;
 }
 
-/* Botón elegante tipo "soft primary" */
+
 .cf-btn-soft-primary {
   border-radius: 999px;
   padding: 0.7rem 1.8rem;
@@ -1722,5 +1718,222 @@ table.cf-table {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* HERO ESPECÍFICO DE MAGENTO (usa el mismo estilo del home) */
+.cf-hero--magento .cf-hero-eyebrow {
+  color: #f9fafb;
+}
+
+.cf-hero--magento .cf-hero-title {
+  color: #ffffff;
+}
+
+.cf-hero--magento .cf-hero-title span {
+  color: #4fb4ff; /* acento azul como en el home */
+}
+
+/* logo Magento en el hero */
+.cf-hero-magento-logo {
+  background: rgba(255,255,255,0.96);
+  border-radius: 24px;
+  padding: 1.4rem 1.8rem;
+  box-shadow: 0 18px 40px rgba(15,23,42,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cf-hero-magento-logo img {
+  max-height: 72px;
+  width: auto;
+  display: block;
+}
+
+/* centrado en mobile */
+@media (max-width: 991.98px) {
+  .cf-hero--magento {
+    text-align: center;
+  }
+
+  .cf-hero-magento-logo {
+    margin-top: 2rem;
+  }
+}
+ 
+/* PLATFORM OVERVIEW – MAGENTO (usa fondo rayado cf-abstract-bg existente) */
+
+.cf-magento-overview-text {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 0.9rem;
+}
+
+.cf-magento-clouds img {
+  max-height: 42px;
+  margin: 0 0.9rem;
+  filter: grayscale(1) opacity(0.9);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.cf-magento-clouds img:hover {
+  filter: grayscale(0) opacity(1);
+  transform: translateY(-3px);
+}
+
+.cf-magento-trusted-heading {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* checklist con check azul tipo Corefinity */
+.cf-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cf-checklist li {
+  position: relative;
+  padding-left: 1.9rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.96rem;
+  color: #1f2933;
+}
+
+.cf-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  border: 2px solid var(--cf-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  background: #ffffff;
+  color: var(--cf-primary);
+  box-shadow: 0 6px 14px rgba(15,23,42,0.18);
+}
+
+/* responsive pequeños ajustes */
+@media (max-width: 767.98px) {
+  #platform-overview .cf-title {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  .cf-magento-clouds {
+    margin-bottom: 2rem;
+  }
+}
+/* =========================================================
+   HERO (MISMO ESTILO QUE EL HOME)
+   ========================================================= */
+
+#hero.cf-hero {
+  position: relative;
+  padding: 160px 0 140px;
+  color: #ffffff;
+}
+
+/* VIDEO DE FONDO */
+#hero .cf-hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* CAPA DEGRADADA DEL HOME */
+#hero .cf-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 112, 219, 0.45) 0%,
+    rgba(255, 132, 102, 0.40) 100%
+  );
+  z-index: -1;
+}
+
+/* EYEBROW */
+#hero .cf-hero-eyebrow {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* TITULO */
+#hero .cf-hero-title {
+  font-size: 62px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+#hero .cf-hero-title span {
+  color: var(--cf-primary); /* azul */
+}
+
+/* TEXTO */
+#hero .cf-hero-text {
+  font-size: 20px;
+  opacity: 0.95;
+  margin: 20px 0 32px;
+  color: #ffffff;
+}
+
+/* BOTÓN */
+#hero .cf-hero-btn {
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 40px;
+  border: 2px solid rgba(255,255,255,0.75);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+#hero .cf-hero-btn:hover {
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+}
+
+/* CLOUD LOGOS */
+#hero .cf-hero-clouds {
+  display: flex;
+  gap: 22px;
+  margin-top: 40px;
+}
+
+#hero .cf-cloud-pill {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero .cf-cloud-pill img {
+  width: 65%;
+  height: auto;
 }
 

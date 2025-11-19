@@ -210,3 +210,59 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+/*solutions-magento.html*/
+
+// ---------- Carrusel genérico (para testimonials) ----------
+document.querySelectorAll('.cf-testimonial-carousel').forEach(carousel => {
+  const track = carousel.querySelector('.cf-carousel-track');
+  const slides = Array.from(track.children);
+  const prevBtn = carousel.querySelector('.cf-carousel-arrow.left');
+  const nextBtn = carousel.querySelector('.cf-carousel-arrow.right');
+  let index = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  });
+});
+
+// ---------- Video testimonials (cambia el iframe según el thumb) ----------
+const videoPlayer = document.getElementById('cf-video-player');
+const videoThumbs = document.querySelectorAll('.cf-video-thumb');
+
+if (videoPlayer && videoThumbs.length) {
+  let current = 0;
+
+  function setVideo(i) {
+    const id = videoThumbs[i].dataset.videoId;
+    videoPlayer.src = `https://www.youtube.com/embed/${id}`;
+    videoThumbs.forEach(t => t.classList.remove('active'));
+    videoThumbs[i].classList.add('active');
+    current = i;
+  }
+
+  videoThumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => setVideo(i));
+  });
+
+  // flechas al lado del video
+  const videoArrows = document.querySelectorAll('.cf-video-arrow');
+  videoArrows.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dir = btn.classList.contains('left') ? -1 : 1;
+      let next = current + dir;
+      if (next < 0) next = videoThumbs.length - 1;
+      if (next >= videoThumbs.length) next = 0;
+      setVideo(next);
+    });
+  });
+}
