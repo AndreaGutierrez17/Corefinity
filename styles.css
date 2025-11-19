@@ -3,6 +3,7 @@
   --cf-primary:       #0274D8;
   --cf-primary-dark:  #003B99;
   --cf-primary-light: #E6F1FB;
+  --cf-header-height: 72px;
 
   /* CTA (Free Demo, botones clave) */
   --cf-accent:        #FF7B39;
@@ -39,6 +40,7 @@ body {
     radial-gradient(circle at bottom right, rgba(255,123,57,0.13), transparent 55%),
     var(--cf-bg);
   margin: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -243,6 +245,56 @@ a {
 .cf-btn.cf-btn-ghost:hover {
   background: #ffffff;
   color: var(--cf-primary-dark);
+}
+
+@media (max-width: 991.98px) {
+  .cf-header .navbar {
+    min-height: var(--cf-header-height);
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .cf-header .navbar-collapse {
+    position: fixed;
+    top: var(--cf-header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1.25rem 1.5rem 2rem;
+    overflow-y: auto;
+    max-height: calc(100vh - var(--cf-header-height));
+    box-shadow: 0 18px 40px rgba(15,23,42,0.16);
+    z-index: 1200;
+  }
+
+  .cf-header .navbar-nav {
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .cf-header .nav-link {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .cf-header .dropdown.dropdown-mega {
+    width: 100%;
+  }
+
+  .cf-header .dropdown-menu.cf-mega-menu {
+    position: static;
+    inset: auto;
+    width: 100%;
+    margin: 0;
+    max-height: calc(100vh - var(--cf-header-height) - 12px);
+    overflow-y: auto;
+    padding: 1.25rem 1rem 1.5rem;
+    box-shadow: 0 16px 40px rgba(15,23,42,0.12);
+    border-radius: 18px;
+  }
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -588,6 +640,7 @@ a {
   position: relative;
   padding: 0 3.5rem;
   margin-bottom: 2.5rem;
+  overflow: hidden;
 }
 
 .cf-trusted-track {
@@ -925,7 +978,31 @@ a {
   display: flex;
   gap: 2rem;
   transition: transform .35s ease;
+  align-items: stretch;
 }
+
+.cf-cases-viewport {
+  overflow: hidden;
+}
+
+.cf-cases-track {
+  display: flex;
+  gap: 2rem;              /* puedes dejar el gap, no pasa nada */
+  transition: transform .35s ease;
+}
+
+/* 2 cards en desktop */
+.cf-case-card {
+  flex: 0 0 50%;
+}
+
+/* 1 card en móvil */
+@media (max-width: 991.98px) {
+  .cf-case-card {
+    flex: 0 0 100%;
+  }
+}
+
 
 /* Cards */
 .cf-case-card {
@@ -939,6 +1016,7 @@ a {
   padding: 1.5rem 1.75rem 1.75rem;
   flex: 0 0 50%;
   text-align: center;
+  min-width: 0;
 }
 
 
@@ -1368,11 +1446,18 @@ a {
   cursor: pointer;
   z-index: 3;
 }
-.cf-carousel-arrow.left  { left: -0.5rem; }
-.cf-carousel-arrow.right { right: -0.5rem; }
+.cf-carousel-arrow.left  { left: 0.35rem; }
+.cf-carousel-arrow.right { right: 0.35rem; }
 
 .cf-carousel-arrow i {
   font-size: 1.1rem;
+}
+
+@media (max-width: 575.98px) {
+  .cf-carousel-arrow {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 /* ---------- TABLA AUDITS ---------- */
@@ -1957,29 +2042,17 @@ table.cf-table {
   flex: 0 0 100%;
 }
 
-@media (max-width: 991.98px) {
-  .dropdown-menu.cf-mega-menu {
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    box-shadow: none;
-
-    max-height: calc(100vh - 72px); /* debajo del header */
-    overflow-y: auto;               /* que haga scroll interno */
-    padding: 1.4rem 1.4rem 1.8rem;
-  }
-
-  /* Las columnas del mega menú se apilan */
-  .cf-resource-group {
-    border-right: none;
-    border-bottom: 1px solid rgba(148,163,184,0.35);
-    margin-bottom: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  /* El panel de preview puede ir abajo o a pantalla completa */
-  .cf-resource-preview {
-    margin-top: 1.4rem;
-    min-height: 220px;
-  }
+/* ---- Carousel sizing + spacing overrides ---- */
+.cf-carousel {
+  overflow: hidden;
 }
+
+.cf-carousel-track {
+  gap: 0 !important;
+}
+
+.cf-carousel-track > * {
+  min-width: 100%;
+  flex: 0 0 100%;
+}
+

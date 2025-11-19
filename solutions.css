@@ -1234,3 +1234,109 @@
 }
 
 
+/* -------------------------
+   PRICING SECTION (PRO)
+--------------------------*/
+
+.cf-magento-pricing {
+  padding: 5rem 0 6rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(0,123,255,0.15), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(3,193,252,0.15), transparent 60%),
+    linear-gradient(135deg, #eef3ff, #fbf9ff);
+}
+
+/* Span degradado */
+.cf-magento-pricing h2 span {
+  background: linear-gradient(90deg, #007dff, #00a2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid */
+.cf-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 991px) {
+  .cf-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .cf-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tarjetas */
+.cf-pricing-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid rgba(150,165,184,0.3);
+  box-shadow: 0 24px 45px rgba(15,23,42,0.14);
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: cfFadeUp .7s ease forwards;
+  opacity: 0;
+}
+
+.cf-pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 55px rgba(15,23,42,0.18);
+}
+
+/* Tier */
+.cf-pricing-tier {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #021628;
+  margin-bottom: .3rem;
+}
+
+/* Descripción pro */
+.cf-pricing-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  margin-bottom: 1.4rem;
+  line-height: 1.6;
+}
+
+/* Body */
+.cf-pricing-body h4 {
+  font-size: 1rem;
+  margin-top: 1.2rem;
+  margin-bottom: .6rem;
+  font-weight: 700;
+  color: #0f1d36;
+}
+
+.cf-pricing-body ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.cf-pricing-body li {
+  font-size: .92rem;
+  color: #4b5563;
+  margin-bottom: .3rem;
+}
+
+/* Footer */
+.cf-pricing-footer {
+  margin-top: 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #007dff;
+}
+
+/* Animación */
+@keyframes cfFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

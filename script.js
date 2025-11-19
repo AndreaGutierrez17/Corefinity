@@ -1,133 +1,190 @@
-// Mega menu preview logic (dynamic image + text + link)
-const resourceItems = document.querySelectorAll('.resource-item');
-const preview = document.getElementById('resourcePreview');
+document.addEventListener('DOMContentLoaded', () => {
+  initMegaMenuPreview();
+  initTrustedStrip();
+  initGenericCarousels();
+  initCaseStudiesCarousel();
+  initVideoThumbs();
+  initMobileNavClose();
+  initLegacyThumbPlayerFallback();
+});
 
-if (preview && resourceItems.length) {
+function initMegaMenuPreview() {
+  const resourceItems = document.querySelectorAll('.resource-item');
+  const preview = document.getElementById('resourcePreview');
+  if (!preview || !resourceItems.length) return;
+
   const previewTitle = preview.querySelector('.cf-preview-title');
-  const previewText  = preview.querySelector('.cf-preview-text');
-  const previewLink  = document.getElementById('previewLink');
-
+  const previewText = preview.querySelector('.cf-preview-text');
+  const previewLink = document.getElementById('previewLink');
   const defaultImage = preview.dataset.defaultImage || '';
 
-  // Imagen por defecto al cargar
   if (defaultImage) {
     preview.style.backgroundImage = `url('${defaultImage}')`;
   }
 
-  const handleHover = (item) => {
+  const updatePreview = (item) => {
+    if (!item) return;
     const title = item.dataset.title || '';
-    const desc  = item.dataset.desc || '';
-    const img   = item.dataset.image || '';
-    const href  = item.getAttribute('href') || '#';
+    const desc = item.dataset.desc || '';
+    const img = item.dataset.image || '';
+    const href = item.getAttribute('href') || '#';
 
     if (title) previewTitle.textContent = title;
-    if (desc)  previewText.textContent  = desc;
-    if (img)   preview.style.backgroundImage = `url('${img}')`;
+    if (desc) previewText.textContent = desc;
+    if (img) preview.style.backgroundImage = `url('${img}')`;
     if (previewLink) previewLink.setAttribute('href', href);
   };
 
+  const enableHover = window.matchMedia('(min-width: 992px)').matches;
   resourceItems.forEach((item) => {
-    item.addEventListener('mouseenter', () => handleHover(item));
-    item.addEventListener('focus', () => handleHover(item));
+    const handler = () => updatePreview(item);
+    if (enableHover) {
+      item.addEventListener('mouseenter', handler);
+      item.addEventListener('focus', handler);
+    } else {
+      item.addEventListener('click', handler);
+    }
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const track   = document.getElementById('trustedTrack');
-  const btnLeft  = document.querySelector('.cf-trusted-arrow.left');
-  const btnRight = document.querySelector('.cf-trusted-arrow.right');
-
+function initTrustedStrip() {
+  const track = document.getElementById('trustedTrack');
   if (!track) return;
 
-  const STEP = 220;      // cuánto se mueve por “click”
-  const INTERVAL = 3500; // ms entre auto-slides
-  let direction = 1;     // 1 hacia la derecha, -1 hacia la izquierda
+  const btnLeft = document.querySelector('.cf-trusted-arrow.left');
+  const btnRight = document.querySelector('.cf-trusted-arrow.right');
+  let direction = 1;
 
-  function slide(dir) {
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    let next = track.scrollLeft + dir * STEP;
+  const getStep = () => Math.max(160, track.clientWidth * 0.6);
 
-    if (next <= 0) {
-      next = 0;
-      direction = 1;
-    }
-    if (next >= maxScroll) {
-      next = maxScroll;
+  const clampScroll = () => {
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    if (track.scrollLeft > maxScroll) {
+      track.scrollLeft = maxScroll;
       direction = -1;
     }
+  };
 
-    track.scrollTo({
-      left: next,
-      behavior: 'smooth'
-    });
-  }
+  const slide = (dir) => {
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    const next = Math.min(Math.max(track.scrollLeft + dir * getStep(), 0), maxScroll);
+    if (next === 0) direction = 1;
+    if (next === maxScroll) direction = -1;
+    track.scrollTo({ left: next, behavior: 'smooth' });
+  };
 
-  // Flechas manuales
   btnLeft && btnLeft.addEventListener('click', () => slide(-1));
   btnRight && btnRight.addEventListener('click', () => slide(1));
 
-  // Auto-scroll
-  setInterval(() => {
-    slide(direction);
-  }, INTERVAL);
-});
+  window.addEventListener('resize', clampScroll);
+  setInterval(() => slide(direction), 3500);
+}
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const carousels = document.querySelectorAll('.cf-carousel');
+function initGenericCarousels() {
+  document.querySelectorAll('.cf-carousel, .cf-testimonial-carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.cf-carousel-track');
+    const slides = track ? Array.from(track.children) : [];
+    if (!track || !slides.length) return;
 
-    carousels.forEach(carousel => {
-      const track  = carousel.querySelector('.cf-carousel-track');
-      const slides = Array.from(track.children);
-      const btnPrev = carousel.querySelector('.cf-carousel-arrow.left');
-      const btnNext = carousel.querySelector('.cf-carousel-arrow.right');
+    const btnPrev = carousel.querySelector('.cf-carousel-arrow.left');
+    const btnNext = carousel.querySelector('.cf-carousel-arrow.right');
+    let index = 0;
 
-      let index = 0;
-
-      function updateSlide() {
-        track.style.transform = 'translateX(-' + (index * 100) + '%)';
-      }
-
-      btnPrev.addEventListener('click', () => {
-        index = (index - 1 + slides.length) % slides.length;
-        updateSlide();
+    const setSlideSizes = () => {
+      const width = carousel.clientWidth;
+      slides.forEach((slide) => {
+        slide.style.minWidth = `${width}px`;
+        slide.style.flexBasis = `${width}px`;
       });
+    };
 
-      btnNext.addEventListener('click', () => {
-        index = (index + 1) % slides.length;
-        updateSlide();
+    const syncThumbs = (activeIndex) => {
+      const thumbsWrapper = carousel.parentElement.querySelector('.cf-video-thumbs');
+      if (!thumbsWrapper) return;
+      thumbsWrapper.querySelectorAll('.cf-video-thumb').forEach((thumb, idx) => {
+        thumb.classList.toggle('active', idx === activeIndex);
       });
+    };
+
+    const pauseInactiveVideos = () => {
+      slides.forEach((slide, idx) => {
+        const vid = slide.querySelector('video');
+        if (vid && idx !== index) vid.pause();
+      });
+    };
+
+    const goTo = (i) => {
+      if (!slides.length) return;
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      pauseInactiveVideos();
+      syncThumbs(index);
+    };
+
+    btnPrev && btnPrev.addEventListener('click', () => goTo(index - 1));
+    btnNext && btnNext.addEventListener('click', () => goTo(index + 1));
+
+    window.addEventListener('resize', () => {
+      setSlideSizes();
+      track.style.transform = `translateX(-${index * 100}%)`;
     });
+
+    setSlideSizes();
+    goTo(0);
+
+    carousel.cfGoTo = goTo;
   });
+}
 
-document.addEventListener('DOMContentLoaded', function () {
+function initCaseStudiesCarousel() {
   const viewport = document.querySelector('.cf-cases-viewport');
-  const track    = document.querySelector('.cf-cases-track');
-  const cards    = document.querySelectorAll('.cf-case-card');
-  const btnPrev  = document.querySelector('.cf-cases-arrow.left');
-  const btnNext  = document.querySelector('.cf-cases-arrow.right');
+  const track = document.querySelector('.cf-cases-track');
+  const cards = track ? Array.from(track.children) : [];
+  if (!viewport || !track || !cards.length) return;
 
-  if (!viewport || !track || cards.length === 0) return;
-
+  const btnPrev = document.querySelector('.cf-cases-arrow.left');
+  const btnNext = document.querySelector('.cf-cases-arrow.right');
   let currentIndex = 0;
-  let cardsPerView = window.innerWidth < 992 ? 1 : 2;
+  let cardsPerView = getCardsPerView();
 
-  function updateCardsPerView() {
-    cardsPerView = window.innerWidth < 992 ? 1 : 2;
+  function getCardsPerView() {
+    return window.innerWidth < 992 ? 1 : 2;
   }
 
-  function maxIndex() {
+  function getGap() {
+    const style = window.getComputedStyle(track);
+    const gapValue = parseFloat(style.columnGap || style.gap || '0');
+    return Number.isNaN(gapValue) ? 0 : gapValue;
+  }
+
+  function getMaxIndex() {
     return Math.max(0, Math.ceil(cards.length / cardsPerView) - 1);
   }
 
-  function updateSlider() {
+  function applyCardWidths() {
     const viewportWidth = viewport.clientWidth;
-    track.style.transform = `translateX(-${currentIndex * viewportWidth}px)`;
+    const gap = getGap();
+    const totalGap = gap * (cardsPerView - 1);
+    const cardWidth = Math.max(0, (viewportWidth - totalGap) / cardsPerView);
+
+    cards.forEach((card) => {
+      card.style.flex = `0 0 ${cardWidth}px`;
+      card.style.maxWidth = `${cardWidth}px`;
+    });
+
+    return cardWidth * cardsPerView + totalGap;
+  }
+
+  function updateSlider() {
+    const slideWidth = applyCardWidths();
+    const maxIndex = getMaxIndex();
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
   }
 
   function goTo(dir) {
-    currentIndex += dir;
-    if (currentIndex < 0) currentIndex = 0;
-    if (currentIndex > maxIndex()) currentIndex = maxIndex();
+    const maxIndex = getMaxIndex();
+    currentIndex = Math.min(Math.max(currentIndex + dir, 0), maxIndex);
     updateSlider();
   }
 
@@ -136,131 +193,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', () => {
     const prevCardsPerView = cardsPerView;
-    updateCardsPerView();
-    if (prevCardsPerView !== cardsPerView) {
-      if (currentIndex > maxIndex()) currentIndex = maxIndex();
-      updateSlider();
-    } else {
-      updateSlider();
+    cardsPerView = getCardsPerView();
+    if (prevCardsPerView !== cardsPerView && currentIndex > getMaxIndex()) {
+      currentIndex = getMaxIndex();
     }
+    updateSlider();
   });
 
-  // init
-  updateCardsPerView();
   updateSlider();
-});
+}
 
-document.addEventListener('DOMContentLoaded', function () {
- 
-  const carousels = document.querySelectorAll('.cf-carousel');
-
-  carousels.forEach(carousel => {
-    const track  = carousel.querySelector('.cf-carousel-track');
-    const slides = Array.from(track.children);
-    const btnPrev = carousel.querySelector('.cf-carousel-arrow.left');
-    const btnNext = carousel.querySelector('.cf-carousel-arrow.right');
-
-    let index = 0;
-
-    function goTo(i) {
-      if (!slides.length) return;
-      index = (i + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
-
-      
-      slides.forEach((slide, idx) => {
-        const vid = slide.querySelector('video');
-        if (vid && idx !== index) {
-          vid.pause();
-        }
-      });
-
-  
-      const thumbsWrapper = carousel.parentElement.querySelector('.cf-video-thumbs');
-      if (thumbsWrapper) {
-        thumbsWrapper.querySelectorAll('.cf-video-thumb').forEach((thumb, idx) => {
-          thumb.classList.toggle('active', idx === index);
-        });
-      }
-    }
-
-    btnPrev && btnPrev.addEventListener('click', () => goTo(index - 1));
-    btnNext && btnNext.addEventListener('click', () => goTo(index + 1));
-
-   
-    carousel.cfGoTo = goTo;
-
-   
-    goTo(0);
-  });
-
+function initVideoThumbs() {
   const videoSection = document.querySelector('#client-testimonials');
-  if (videoSection) {
-    const carousel = videoSection.querySelector('.cf-carousel');
-    const thumbs = videoSection.querySelectorAll('.cf-video-thumb');
+  if (!videoSection) return;
 
-    thumbs.forEach(thumb => {
-      const idx = parseInt(thumb.getAttribute('data-video-index'), 10);
-      thumb.addEventListener('click', () => {
-        if (carousel && typeof carousel.cfGoTo === 'function') {
-          carousel.cfGoTo(idx);
-        }
-      });
+  const carousel = videoSection.querySelector('.cf-carousel');
+  const thumbs = videoSection.querySelectorAll('.cf-video-thumb');
+  thumbs.forEach((thumb) => {
+    const idx = parseInt(thumb.getAttribute('data-video-index'), 10);
+    thumb.addEventListener('click', () => {
+      if (carousel && typeof carousel.cfGoTo === 'function') {
+        carousel.cfGoTo(idx);
+      }
     });
-  }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const carousels = document.querySelectorAll('.cf-carousel');
-
-  carousels.forEach(carousel => {
-    const track   = carousel.querySelector('.cf-carousel-track');
-    const slides  = Array.from(track.children);
-    const btnPrev = carousel.querySelector('.cf-carousel-arrow.left');
-    const btnNext = carousel.querySelector('.cf-carousel-arrow.right');
-
-    if (!track || !slides.length) return;
-
-    let index = 0;
-
-    function update() {
-      const width = carousel.clientWidth;           // ancho real del carrusel
-      track.style.transform = `translateX(-${index * width}px)`;
-    }
-
-    function goTo(i) {
-      index = (i + slides.length) % slides.length;
-      update();
-
-      // Si es carrusel de video, pausa los que no están activos
-      slides.forEach((slide, idx) => {
-        const vid = slide.querySelector('video');
-        if (vid && idx !== index) vid.pause();
-      });
-    }
-
-    btnPrev && btnPrev.addEventListener('click', () => goTo(index - 1));
-    btnNext && btnNext.addEventListener('click', () => goTo(index + 1));
-
-    window.addEventListener('resize', update);
-
-    // inicio
-    goTo(0);
   });
-});
+}
 
+function initMobileNavClose() {
+  const nav = document.getElementById('mainNav');
+  if (!nav || typeof bootstrap === 'undefined' || !bootstrap.Collapse) return;
 
-// ---------- Video testimonials (cambia el iframe según el thumb) ----------
-const videoPlayer = document.getElementById('cf-video-player');
-const videoThumbs = document.querySelectorAll('.cf-video-thumb');
+  const collapse = bootstrap.Collapse.getOrCreateInstance(nav, { toggle: false });
+  const navLinks = nav.querySelectorAll('a');
 
-if (videoPlayer && videoThumbs.length) {
+  const maybeClose = (event) => {
+    const link = event.currentTarget;
+    const isDropdownToggle = link.getAttribute('data-bs-toggle') === 'dropdown';
+    if (window.innerWidth < 992 && !isDropdownToggle) {
+      collapse.hide();
+    }
+  };
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', maybeClose);
+  });
+}
+
+// Fallback logic for pages using the standalone video player + thumbs pattern
+function initLegacyThumbPlayerFallback() {
+  const videoPlayer = document.getElementById('cf-video-player');
+  const videoThumbs = document.querySelectorAll('.cf-video-thumb[data-video-id]');
+  if (!videoPlayer || !videoThumbs.length) return;
+
   let current = 0;
 
   function setVideo(i) {
     const id = videoThumbs[i].dataset.videoId;
     videoPlayer.src = `https://www.youtube.com/embed/${id}`;
-    videoThumbs.forEach(t => t.classList.remove('active'));
+    videoThumbs.forEach((t) => t.classList.remove('active'));
     videoThumbs[i].classList.add('active');
     current = i;
   }
@@ -269,9 +259,8 @@ if (videoPlayer && videoThumbs.length) {
     thumb.addEventListener('click', () => setVideo(i));
   });
 
-  // flechas al lado del video
   const videoArrows = document.querySelectorAll('.cf-video-arrow');
-  videoArrows.forEach(btn => {
+  videoArrows.forEach((btn) => {
     btn.addEventListener('click', () => {
       const dir = btn.classList.contains('left') ? -1 : 1;
       let next = current + dir;
