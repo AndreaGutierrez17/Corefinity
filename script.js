@@ -210,30 +210,45 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-/*solutions-magento.html*/
+document.addEventListener('DOMContentLoaded', function () {
+  const carousels = document.querySelectorAll('.cf-carousel');
 
-// ---------- Carrusel genérico (para testimonials) ----------
-document.querySelectorAll('.cf-testimonial-carousel').forEach(carousel => {
-  const track = carousel.querySelector('.cf-carousel-track');
-  const slides = Array.from(track.children);
-  const prevBtn = carousel.querySelector('.cf-carousel-arrow.left');
-  const nextBtn = carousel.querySelector('.cf-carousel-arrow.right');
-  let index = 0;
+  carousels.forEach(carousel => {
+    const track   = carousel.querySelector('.cf-carousel-track');
+    const slides  = Array.from(track.children);
+    const btnPrev = carousel.querySelector('.cf-carousel-arrow.left');
+    const btnNext = carousel.querySelector('.cf-carousel-arrow.right');
 
-  function updateSlide() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
+    if (!track || !slides.length) return;
 
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + slides.length) % slides.length;
-    updateSlide();
-  });
+    let index = 0;
 
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    updateSlide();
+    function update() {
+      const width = carousel.clientWidth;           // ancho real del carrusel
+      track.style.transform = `translateX(-${index * width}px)`;
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      update();
+
+      // Si es carrusel de video, pausa los que no están activos
+      slides.forEach((slide, idx) => {
+        const vid = slide.querySelector('video');
+        if (vid && idx !== index) vid.pause();
+      });
+    }
+
+    btnPrev && btnPrev.addEventListener('click', () => goTo(index - 1));
+    btnNext && btnNext.addEventListener('click', () => goTo(index + 1));
+
+    window.addEventListener('resize', update);
+
+    // inicio
+    goTo(0);
   });
 });
+
 
 // ---------- Video testimonials (cambia el iframe según el thumb) ----------
 const videoPlayer = document.getElementById('cf-video-player');
